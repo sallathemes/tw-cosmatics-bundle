@@ -12,580 +12,1641 @@
   "repository": "https://github.com/sallathemes/tw-cosmatics-bundle",
   "components": [
     {
-      "title": "Getting Started Guide",
-      "icon": "sicon-rocket",
-      "name": "getting-started-guide",
-      "key": "0a1b2c3d-4e5f-6g7h-8i9j-0k1l2m3n4o5p",
-      "image": "https://cdn.salla.network/images/themes/raed/preview-images/getting-started.png"
-    },
-    {
-      "title": "Basic Inputs",
-      "icon": "sicon-format-text-alt",
-      "name": "basic-inputs",
-      "key": "1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p",
-      "image": "https://cdn.salla.network/images/themes/raed/preview-images/text-input.png",
+      "key": "9a758d20-2ce4-4782-91fe-c04253464081",
+      "title": "معرض صور (لاندنج)",
+      "icon": "sicon-list-play",
+      "name": "images-gallery",
       "fields": [
         {
-          "id": "text",
-          "icon": "sicon-format-text-alt",
+          "id": "title",
           "type": "string",
-          "label": "Text",
-          "placeholder": "Enter text here...",
           "format": "text",
+          "label": "العنوان الرئيسي",
+          "description": null,
+          "labelHTML": null,
+          "placeholder": null,
+          "icon": "sicon-format-text-alt",
+          "value": "اكتشف منتجنا الافضل و لا تفوت الفرصة!",
+          "multilanguage": true,
+          "required": true,
+          "minLength": 6,
+          "maxLength": 50
+        },
+        {
+          "id": "subtitle",
+          "type": "string",
+          "format": "text",
+          "label": "عنوان فرعي",
+          "description": null,
+          "labelHTML": null,
+          "placeholder": null,
+          "icon": "sicon-format-text-alt",
+          "value": "معرض صور المميزات",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 6,
+          "maxLength": 50
+        },
+        {
+          "type": "string",
+          "icon": "sicon-toggle-off",
+          "label": "لون العنوان الفرعي",
+          "description": null,
+          "id": "subtitle_color",
+          "format": "color",
+          "required": false,
+          "value": "#000000"
+        },
+        {
+          "id": "images",
+          "type": "collection",
+          "format": "collection",
           "required": true,
           "minLength": 1,
-          "maxLength": 100,
-          "value": "Sample text value"
-        },
+          "maxLength": 32,
+          "item_label": "صورة",
+          "value": [
+            {
+              "image": "https://cdn.salla.network/images/themes/landing-page/default-image-gallery.png"
+            },
+            {
+              "image": "https://cdn.salla.network/images/themes/landing-page/default-image-gallery.png"
+            },
+            {
+              "image": "https://cdn.salla.network/images/themes/landing-page/default-image-gallery.png"
+            },
+            {
+              "image": "https://cdn.salla.network/images/themes/landing-page/default-image-gallery.png"
+            }
+          ],
+          "fields": [
+            {
+              "type": "string",
+              "icon": "sicon-image",
+              "value": null,
+              "label": "صورة",
+              "id": "image",
+              "format": "image",
+              "required": true,
+              "placeholder": null,
+              "description": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "266d41d8-d0ac-4199-99e8-140231a9b3ae",
+      "title": "بنر ترويجي (لاندنج)",
+      "icon": "sicon-image-carousel",
+      "name": "st-promotion-banner",
+      "fields": [
         {
-          "id": "email",
-          "icon": "sicon-mail",
+          "comment": "---------------------------------------- البنر الإعلاني أساسي----------------------------------------------",
           "type": "string",
-          "label": "Email Input",
-          "placeholder": "Enter email address...",
-          "format": "email",
-          "required": true,
-          "description": "An email input field with validation",
-          "value": "example@salla.sa"
-        },
-        {
-          "id": "url",
-          "icon": "sicon-link",
-          "type": "string",
-          "label": "URL Input",
-          "placeholder": "Enter website URL...",
-          "format": "url",
+          "icon": "sicon-toggle-off",
+          "label": "لون الخلفية",
+          "description": "لون خلفية البنر",
+          "id": "bg_color",
+          "format": "color",
           "required": false,
-          "description": "A URL input field with validation",
-          "value": "https://salla.dev"
+          "value": "#000000",
+          "key": "1ce6c29b-c3f1-4d36-9582-d014938046d5"
         },
         {
-          "id": "password",
-          "icon": "sicon-lock",
           "type": "string",
-          "label": "Password Input",
-          "placeholder": "Enter password...",
-          "format": "password",
-          "hide": true,
-          "required": false
-        },
-        {
-          "id": "textarea",
-          "icon": "sicon-paragraph",
-          "type": "string",
-          "label": "Textarea",
-          "placeholder": "Enter multi-line text here...",
-          "format": "textarea",
-          "required": true,
-          "minLength": 1,
-          "maxLength": 500,
-          "rows": 4,
-          "value": "This is a sample text\nwith multiple lines\nto demonstrate the textarea."
-        },
-        {
-          "id": "number",
-          "icon": "sicon-calculator",
-          "type": "number",
-          "label": "Basic Number",
-          "placeholder": "Enter a number...",
-          "format": "number",
-          "inputType": "number",
-          "required": true,
-          "value": 42
-        },
-        {
-          "id": "float",
-          "icon": "sicon-calculator",
-          "type": "number",
-          "label": "Float Number",
-          "placeholder": "Enter a decimal number...",
-          "format": "float",
-          "inputType": "number",
+          "icon": "sicon-toggle-off",
+          "label": "لون النصوص",
+          "description": "يُفضل أن يكون لون معاكس للخلفية",
+          "id": "text_color",
+          "format": "color",
           "required": false,
-          "step": 0.1,
-          "value": 3.14
+          "value": "#ffffff"
         },
         {
-          "id": "units",
-          "icon": "sicon-tag",
-          "type": "number",
-          "label": "Units",
-          "placeholder": "Enter units...",
-          "format": "units",
-          "required": true,
-          "step": 0.5,
-          "unit": "kg",
-          "value": 1
-        },
-        {
-          "id": "slider",
-          "type": "number",
-          "label": "Slider",
-          "format": "slider",
-          "inputType": "range",
-          "required": false,
-          "minimum": 0,
-          "maximum": 100,
-          "step": 1,
-          "value": 75
-        },
-        {
-          "id": "checkbox",
-          "icon": "sicon-check-circle",
           "type": "boolean",
-          "label": "Checkbox",
-          "format": "checkbox",
-          "required": true,
-          "description": "Enable or disable this feature",
-          "value": true
-        },
-        {
-          "id": "switch",
-          "icon": "sicon-bell",
-          "type": "boolean",
-          "label": "Switch",
+          "icon": "sicon-toggle-off",
+          "label": "نجوم متحركة في الخلفية",
+          "description": "",
+          "id": "has_animated_starts_in_bg",
           "format": "switch",
           "required": false,
-          "description": "Enable notifications",
-          "value": false
-        }
-      ]
-    },
-    {
-      "title": "Items Select Input",
-      "icon": "sicon-list",
-      "name": "items-select-input",
-      "key": "5e6f7g8h-9i0j-1k2l-3m4n-5o6p7q8r9s0t",
-      "image": "https://cdn.salla.network/images/themes/raed/preview-images/items-select-input.png",
-      "fields": [
-        {
-          "id": "dropdown-list",
-          "icon": "sicon-folder",
-          "type": "items",
-          "source": "Manual",
-          "label": "Dropdown List",
-          "format": "dropdown-list",
-          "required": true,
-          "options": [
-            {
-              "label": "Clothing",
-              "value": "clothing",
-              "key": "clothing"
-            },
-            {
-              "label": "Electronics",
-              "value": "electronics",
-              "key": "electronics"
-            },
-            {
-              "label": "Home & Garden",
-              "value": "home",
-              "key": "home"
-            }
-          ],
-          "selected": [
-            {
-              "label": "Electronics",
-              "value": "electronics",
-              "key": "electronics"
-            }
-          ]
+          "value": true,
+          "selected": true
         },
         {
-          "id": "checkbox-list",
-          "icon": "sicon-tag",
-          "type": "items",
-          "label": "Checkbox List",
-          "format": "checkbox-list",
-          "required": false,
-          "multichoice": true,
-          "description": "Select multiple tags",
-          "options": [
-            {
-              "label": "New",
-              "value": "new",
-              "key": "new"
-            },
-            {
-              "label": "Featured",
-              "value": "featured",
-              "key": "featured"
-            },
-            {
-              "label": "Offer",
-              "value": "offer",
-              "key": "offer"
-            }
-          ],
-          "selected": [
-            {
-              "label": "New",
-              "value": "new",
-              "key": "new"
-            },
-            {
-              "label": "Offer",
-              "value": "offer",
-              "key": "offer"
-            }
-          ]
-        },
-        {
-          "id": "radio-list",
-          "icon": "sicon-truck",
-          "type": "items",
-          "label": "Radio List",
-          "format": "radio-list",
-          "required": true,
-          "options": [
-            {
-              "label": "Standard",
-              "value": "standard",
-              "key": "standard"
-            },
-            {
-              "label": "Express",
-              "value": "express",
-              "key": "express"
-            },
-            {
-              "label": "Priority",
-              "value": "priority",
-              "key": "priority"
-            }
-          ],
-          "selected": [
-            {
-              "label": "Standard",
-              "value": "standard",
-              "key": "standard"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Dropdown List Source Input",
-      "icon": "sicon-database",
-      "name": "dropdown-list-source-input",
-      "key": "9i0j1k2l-3m4n-5o6p-7q8r-9s0t1u2v3w4x",
-      "image": "https://cdn.salla.network/images/themes/raed/preview-images/dropdown-list-source-input.png",
-      "fields": [
-        {
-          "id": "product",
-          "icon": "sicon-box",
-          "type": "items",
-          "label": "Product",
-          "format": "dropdown-list",
-          "multichoice": true,
-          "required": true,
-          "description": "Select multiple products",
-          "source": "products"
-        },
-        {
-          "id": "category",
-          "icon": "sicon-folder",
-          "type": "items",
-          "label": "Category",
-          "format": "dropdown-list",
-          "required": false,
-          "source": "categories"
-        },
-        {
-          "id": "brand",
-          "icon": "sicon-brand",
-          "type": "items",
-          "label": "Brand",
-          "format": "dropdown-list",
-          "required": true,
-          "source": "brands"
-        },
-        {
-          "id": "blog_article",
-          "icon": "sicon-article",
-          "type": "items",
-          "label": "Blog Article",
-          "format": "dropdown-list",
-          "required": false,
-          "source": "blog_articles"
-        },
-        {
-          "id": "blog_category",
-          "icon": "sicon-folder-article",
-          "type": "items",
-          "label": "Blog Category",
-          "format": "dropdown-list",
-          "required": false,
-          "source": "blog_categories"
-        },
-        {
-          "id": "page",
-          "icon": "sicon-page",
-          "type": "items",
-          "label": "Page",
-          "format": "dropdown-list",
-          "required": false,
-          "source": "pages"
-        },
-        {
-          "id": "special_offer",
-          "icon": "sicon-discount",
-          "type": "items",
-          "label": "Special Offer",
-          "format": "dropdown-list",
-          "required": false,
-          "source": "special_offers"
-        },
-        {
-          "id": "branch",
-          "icon": "sicon-store",
-          "type": "items",
-          "label": "Branch",
-          "format": "dropdown-list",
-          "required": false,
-          "source": "branches"
-        },
-        {
-          "id": "product_tag",
-          "icon": "sicon-tag",
-          "type": "items",
-          "label": "Product Tag",
-          "format": "dropdown-list",
-          "required": false,
-          "source": "products_tags"
-        },
-        {
-          "id": "source_url",
-          "icon": "sicon-shopping-bag",
-          "type": "items",
-          "label": "Multi Conditional Sources",
-          "format": "variable-list",
-          "required": true,
-          "source": "custom",
-          "selected": [
-            {
-              "label": "Article",
-              "key": "blog_articles",
-              "value": "blog_articles"
-            }
-          ],
-          "sources": [
-            {
-              "label": "Product",
-              "key": "products",
-              "value": "products"
-            },
-            {
-              "label": "Category",
-              "key": "categories",
-              "value": "categories"
-            },
-            {
-              "label": "Brand",
-              "key": "brands",
-              "value": "brands"
-            },
-            {
-              "label": "Page",
-              "key": "pages",
-              "value": "pages"
-            },
-            {
-              "label": "Article",
-              "key": "blog_articles",
-              "value": "blog_articles"
-            },
-            {
-              "label": "Blog Category",
-              "key": "blog_categories",
-              "value": "blog_categories"
-            },
-            {
-              "label": "Offer",
-              "key": "offers_link",
-              "value": "offers_link"
-            },
-            {
-              "label": "Brand Link",
-              "key": "brands_link",
-              "value": "brands_link"
-            },
-            {
-              "label": "Blog Link",
-              "key": "blog_link",
-              "value": "blog_link"
-            },
-            {
-              "label": "Custom",
-              "key": "custom",
-              "value": "custom"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Advanced Inputs",
-      "icon": "sicon-star",
-      "name": "advanced-inputs",
-      "key": "2l3m4n5o-6p7q-8r9s-0t1u-2v3w4x5y6z7a",
-      "image": "https://cdn.salla.network/images/themes/raed/preview-images/advanced-inputs.png",
-      "fields": [
-        {
-          "id": "icon",
+          "id": "date",
           "type": "string",
-          "format": "icon",
-          "label": "Icon",
-          "class": "inline form--inline",
+          "format": "date",
+          "inputType": "date",
+          "label": "تاريخ انتهاء العرض",
+          "description": null,
+          "labelHTML": null,
+          "icon": "sicon-calendar-date",
+          "value": "2024-12-01",
+          "required": true,
+          "defaulted": true,
+          "public": false
+        },
+        {
+          "type": "static",
+          "id": "part1_line",
+          "format": "line"
+        },
+        {
+          "type": "static",
+          "format": "title",
+          "id": "part1",
+          "value": "مساحة النص الأولى",
+          "variant": "h6"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "الأيقونة والعنوان الرئيسي",
+          "id": "part1_icon",
+          "value": "sicon-store2",
           "required": false,
-          "value": "sicon-star"
+          "format": "icon",
+          "class": "form--inline",
+          "description": null
         },
         {
           "type": "string",
           "icon": "sicon-format-text-alt",
           "multilanguage": true,
-          "id": "lingual_text",
-          "value": null,
+          "id": "part1_title",
+          "value": "هدية يوم التأسيس",
           "required": false,
           "format": "text",
           "description": null,
-          "placeholder": "Enter icon title here...",
+          "placeholder": "أدخل العنوان هنا...",
           "minLength": 2,
-          "maxLength": 80
+          "maxLength": 50
         },
         {
-          "id": "color",
-          "icon": "sicon-color-palette",
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "عنوان فرعي",
+          "value": "هدية يوم التأسيس",
+          "multilanguage": true,
+          "id": "part1_subtitle",
+          "required": false,
+          "format": "text",
+          "description": "",
+          "placeholder": "أدخل العنوان الفرعي هنا...",
+          "minLength": 0,
+          "maxLength": 50
+        },
+        {
+          "type": "static",
+          "id": "part2_line",
+          "format": "line"
+        },
+        {
+          "type": "static",
+          "format": "title",
+          "id": "part2",
+          "value": "مساحة النص الثانية",
+          "variant": "h6"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "الأيقونة والعنوان الرئيسي",
+          "id": "part2_icon",
+          "value": "sicon-store2",
+          "required": false,
+          "format": "icon",
+          "class": "form--inline",
+          "description": null
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "multilanguage": true,
+          "id": "part2_title",
+          "value": "لا تنتظر اكثر من ذلك",
+          "required": false,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنوان هنا...",
+          "minLength": 2,
+          "maxLength": 50
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "عنوان فرعي",
+          "value": "خصومات يوم التأسيس بدأت الآن",
+          "multilanguage": true,
+          "id": "part2_subtitle",
+          "required": false,
+          "format": "text",
+          "description": "",
+          "placeholder": "أدخل العنوان الفرعي هنا...",
+          "minLength": 0,
+          "maxLength": 50
+        },
+        {
+          "type": "static",
+          "id": "part2_line",
+          "format": "line"
+        },
+        {
+          "type": "static",
+          "format": "title",
+          "id": "part2",
+          "value": "زر البنر",
+          "variant": "h6"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "نص زر احصل عليه الآن",
+          "value": "احصل عليه الآن",
+          "multilanguage": true,
+          "id": "banner_btn_text",
+          "required": false,
+          "format": "text",
+          "description": "",
+          "placeholder": "",
+          "minLength": 0,
+          "maxLength": 50
+        }
+      ]
+    },
+    {
+      "key": "186b3f4f-29cf-4d3c-abca-cef7eed6f0ab",
+      "title": "بنر إعلاني متحرك",
+      "icon": "sicon-image-carousel",
+      "name": "marquee",
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "static-desc",
+          "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img src='https://cdn.salla.network/images/themes/landing-page/marquee.png'></div>"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-toggle-off",
+          "label": "لون الخلفية",
+          "description": "لون خلفية البنر",
+          "id": "bg_color",
           "format": "color",
-          "type": "string",
-          "inputType": "color",
-          "label": "Color",
-          "required": true,
-          "value": "#2377CD",
-          "class": "mt-4"
-        },
-        {
-          "id": "image",
-          "icon": "sicon-image-landscape",
-          "type": "string",
-          "format": "image",
-          "label": "Image",
           "required": false,
-          "value": "https://cdn.salla.sa/form-builder/EMl1Ae8o35qzaG0HvVqz0IpeqcK9uyHliKksscja.jpg"
+          "value": "#000000",
+          "key": "1ce6c29b-c3f1-4d36-9582-d014938046d5"
         },
         {
-          "id": "date",
-          "icon": "sicon-calendar",
           "type": "string",
-          "format": "date",
-          "inputType": "date",
-          "label": "Date",
-          "required": true,
-          "value": "2025-07-15"
-        },
-        {
-          "id": "time",
-          "icon": "sicon-clock",
-          "type": "string",
-          "format": "time",
-          "inputType": "date",
-          "label": "Time",
+          "icon": "sicon-toggle-off",
+          "label": "لون النصوص",
+          "description": "يُفضل أن يكون لون معاكس للخلفية",
+          "id": "text_color",
+          "format": "color",
           "required": false,
-          "value": "09:00"
+          "value": "#ffffff",
+          "key": "1ce6c29b-c3f1-4d36-9582-d014938249d5"
         },
         {
-          "id": "datetime",
-          "icon": "sicon-calendar-time",
-          "type": "string",
-          "format": "datetime",
-          "inputType": "date",
-          "label": "Date & Time",
-          "required": false,
-          "value": "2025-07-20T14:30:00"
-        }
-      ]
-    },
-    {
-      "title": "بطاقة منتج",
-      "icon": "sicon-album-photo",
-      "name": "product-card",
-      "key": "0d1f3b8e-6a2c-4f5d-9e7b-8c1a2b3d4e5f",
-      "image": "https://cdn.salla.network/images/themes/raed/preview-images/images-slider-enhancement.png",
-      "fields": [
-        {
-          "id": "product",
-          "icon": "sicon-keyboard_arrow_down",
-          "type": "items",
-          "label": "اختر المنتج",
-          "placeholder": "البحث في قائمة المنتجات...",
-          "format": "dropdown-list",
-          "source": "products",
-          "options": [],
-          "required": true,
-          "selected": [],
-          "searchable": true,
-          "multichoice": false
-        }
-      ]
-    },
-    {
-      "title": "جدول محتوى بسيط",
-      "icon": "sicon-layout-grid-rearrange",
-      "name": "table-list",
-      "image": "https://cdn.salla.network/images/themes/raed/main-links-with-bg.jpg",
-      "key": "9f8e7d6c-5b4a-3c2d-1e0f-a9b8c7d6e5f4",
-      "fields": [
-        {
-          "id": "items",
+          "id": "texts",
           "type": "collection",
           "format": "collection",
           "required": true,
           "minLength": 1,
-          "maxLength": 100,
-          "item_label": "صفوف الجدول",
+          "maxLength": 10,
+          "label": "",
+          "item_label": "نص إعلاني",
           "value": [
             {
-              "title": "Featured Products",
-              "description": "Our best-selling items with special discounts"
+              "texts.title": "شحن مجاني لجميع انحاء المملكة"
             },
             {
-              "title": "New Arrivals",
-              "description": "Latest additions to our collection"
+              "texts.title": "تخفيضات نهاية العام"
             },
             {
-              "title": "Special Offers",
-              "description": "Limited-time deals and promotions"
+              "texts.title": "خصم إضافي 5٪ عند الدفع عن طريق البطاقات البنكية و أبل باي"
+            },
+            {
+              "texts.title": "شحن مجاني لجميع انحاء المملكة"
+            },
+            {
+              "texts.title": "تخفيضات نهاية العام"
+            },
+            {
+              "texts.title": "خصم إضافي 5٪ عند الدفع عن طريق البطاقات البنكية و أبل باي"
             }
           ],
           "fields": [
             {
               "type": "string",
               "icon": "sicon-format-text-alt",
-              "id": "title",
-              "required": true,
+              "label": "نص إعلاني",
+              "multilanguage": true,
+              "id": "texts.title",
+              "value": null,
+              "required": false,
               "format": "text",
-              "placeholder": "أدخل عنوان الصف هنا...",
-              "minLength": 1,
+              "description": "",
+              "placeholder": "يمكنك إضافة النص هنا...",
+              "minLength": 0,
               "maxLength": 100
-            },
-            {
-              "type": "string",
-              "icon": "sicon-format-text-alt",
-              "id": "description",
-              "format": "textarea",
-              "placeholder": "أدخل وصف الصف هنا...",
-              "maxLength": 1000
             }
           ]
         }
       ]
     },
     {
-      "title": "رجوع للأعلى",
-      "icon": "sicon-arrow-up",
-      "name": "scroll-top",
-      "key": "8c7b6a5d-4e3f-2g1h-0i9j-8k7l6m5n4o3p",
-      "image": "https://cdn.salla.network/images/themes/raed/preview-images/main-links-with-bg.jpg"
+      "key": "ede11a2a-5863-4766-810c-122b790b1eb0",
+      "title": "عداد تنازلي",
+      "icon": "sicon-alarm",
+      "name": "count-down",
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "static-desc",
+          "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img src='https://cdn.salla.network/images/themes/landing-page/count-down.png'></div>"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "multilanguage": true,
+          "id": "text",
+          "value": "العرض ينتهي بعد",
+          "required": true,
+          "format": "text",
+          "description": null,
+          "placeholder": "",
+          "minLength": 2,
+          "maxLength": 150
+        },
+        {
+          "id": "date",
+          "key": "2d9d6c80-8886-4ec7-9602-2bb389c596cd",
+          "type": "string",
+          "format": "date",
+          "inputType": "date",
+          "label": "Date",
+          "description": null,
+          "labelHTML": null,
+          "icon": "sicon-calendar-date",
+          "value": "2024-12-01",
+          "required": true,
+          "defaulted": true,
+          "public": false
+        }
+      ]
+    },
+    {
+      "key": "ede17a2a-5863-4766-810c-122b790b1eb1",
+      "title": "رأس الصفحة",
+      "icon": "sicon-alarm",
+      "name": "page-header",
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "static-desc",
+          "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img src='https://cdn.salla.network/images/themes/landing-page/header.png'></div>"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-toggle-off",
+          "label": "لون الخلفية",
+          "description": "لون خلفية رأس الصفحة",
+          "id": "bg_color",
+          "format": "color",
+          "required": false,
+          "value": "#333333",
+          "key": "1ce6c29b-c3f1-4d36-9282-d014928046d5"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-toggle-off",
+          "label": "لون النصوص",
+          "description": "لون نصوص رأس الصفحة",
+          "id": "text_color",
+          "format": "color",
+          "required": false,
+          "value": "#ffffff"
+        }
+      ]
+    },
+    {
+      "key": "186b3f4f-25cf-4d3c-abca-cef7eed9f0ab",
+      "title": "مقدمة الصفحة",
+      "icon": "sicon-envelope",
+      "name": "hero-area",
+      "image": "https://cdn.salla.network/images/themes/landing-page/hero-area.png",
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "static-desc",
+          "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img src='https://cdn.salla.network/images/themes/landing-page/hero-area.png'></div>"
+        },
+        {
+          "id": "sub_title",
+          "key": "187cbf26-4000-4662-813a-23bba3c70f30",
+          "type": "string",
+          "format": "text",
+          "label": "عنوان فرعي",
+          "description": null,
+          "labelHTML": null,
+          "placeholder": "يمكنك إضافة عنوان فرعي هنا...",
+          "icon": "sicon-format-text-alt",
+          "value": "اسم المنتج",
+          "multilanguage": true,
+          "required": true,
+          "minLength": 6,
+          "maxLength": 50
+        },
+        {
+          "id": "main_title",
+          "key": "92d0bda9-3ea1-45f1-a5c2-4a14d8f277eb",
+          "type": "string",
+          "format": "text",
+          "label": "عنوان رئيسي",
+          "description": null,
+          "labelHTML": null,
+          "placeholder": "يمكنك إضافة عنوان رئيسي  هنا...",
+          "icon": "sicon-format-text-alt",
+          "value": "اكتشف منتجنا الافضل و لا تفوت الفرصة !",
+          "multilanguage": true,
+          "required": true,
+          "minLength": 6,
+          "maxLength": 50
+        },
+        {
+          "id": "description",
+          "key": "3f9d11db-a402-4c0d-afad-f4bc225ac53e",
+          "type": "string",
+          "format": "text",
+          "label": "وصف مختصر",
+          "description": null,
+          "labelHTML": null,
+          "placeholder": "يمكنك إضافة وصف مختصر هنا...",
+          "icon": "sicon-format-text-alt",
+          "value": "نقدم لك المنتج الذي غير قواعد اللعبة و تمتع بمزايا و منافع لامثيل لها.",
+          "multilanguage": true,
+          "required": true,
+          "minLength": 6,
+          "maxLength": 100
+        },
+        {
+          "id": "bgk_color",
+          "key": "b19df7e7-e8bd-4880-8159-2e725d3deab1",
+          "type": "string",
+          "format": "color",
+          "inputType": "color",
+          "label": "لون الخلفية",
+          "description": null,
+          "labelHTML": null,
+          "icon": "sicon-format-fill",
+          "value": "#F2F5F7",
+          "required": false
+        },
+        {
+          "id": "text_color",
+          "key": "b19df7e7-e8bd-4880-8159-2e725d3deab1",
+          "type": "string",
+          "format": "color",
+          "inputType": "color",
+          "label": "لون النصوص",
+          "description": null,
+          "labelHTML": null,
+          "icon": "sicon-format-fill",
+          "value": "#000000",
+          "required": false
+        },
+        {
+          "type": "string",
+          "icon": "sicon-image",
+          "value": "https://cdn.salla.network/images/themes/landing-page/default-hero-area-image.png",
+          "id": "image",
+          "label": "صورة",
+          "format": "image",
+          "required": false,
+          "placeholder": null,
+          "description": "",
+          "key": "9b8e7a45-3288-413c-8161-0590a9d09e05"
+        },
+        {
+          "type": "boolean",
+          "icon": "sicon-toggle-off",
+          "label": "عكس اتجاه الصوره والمحتوى",
+          "description": "",
+          "id": "is_reverse",
+          "format": "switch",
+          "required": false,
+          "value": false,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "key": "186b3f4f-25cf-4d3c-abca-cef7eed9f0ab",
+      "title": "مقدمة الصفحة ١ (بيوتي)",
+      "icon": "sicon-envelope",
+      "name": "st-hero-area-one",
+      "image": "https://cdn.salla.sa/qQqDaW/LjfqLoCufAZTrDuVp2EZLEZxyDSw8rIuLh0ktweI.jpg",
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "static-desc",
+          "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img src='https://cdn.salla.sa/qQqDaW/LjfqLoCufAZTrDuVp2EZLEZxyDSw8rIuLh0ktweI.jpg'></div>"
+        },
+        {
+          "id": "main_title",
+          "type": "string",
+          "format": "text",
+          "label": "عنوان رئيسي",
+          "description": null,
+          "labelHTML": null,
+          "placeholder": "يمكنك إضافة عنوان رئيسي  هنا...",
+          "icon": "sicon-format-text-alt",
+          "value": "واقي شمس جديد من فرانشر",
+          "multilanguage": true,
+          "required": true,
+          "minLength": 6,
+          "maxLength": 50
+        },
+        {
+          "id": "description",
+          "key": "3f9d11db-a402-4c0d-afad-f4bc225ac53e",
+          "type": "string",
+          "format": "text",
+          "label": "وصف مختصر",
+          "description": null,
+          "labelHTML": null,
+          "placeholder": "يمكنك إضافة وصف مختصر هنا...",
+          "icon": "sicon-format-text-alt",
+          "value": "يشير عامل الحماية من الشمس (SPF) إلى مدى فعالية واقي الشمس في حماية الجلد من أشعة UVB. كلما ارتفع رقم SPF، زادت حماية واقي الشمس. على سبيل المثال، واقي الشمس بعامل حماية من الشمس 30 يحجب 97٪ من أشعة UVB، بينما يحجب واقي الشمس بعامل حماية من الشمس 15 فقط 93٪ من أشعة UVB.",
+          "multilanguage": true,
+          "required": true,
+          "minLength": 6,
+          "maxLength": 500
+        },
+        {
+          "id": "bgk_color",
+          "key": "b19df7e7-e8bd-4880-8159-2e725d3deab1",
+          "type": "string",
+          "format": "color",
+          "inputType": "color",
+          "label": "لون الخلفية",
+          "description": null,
+          "labelHTML": null,
+          "icon": "sicon-format-fill",
+          "value": "#F2F2F4",
+          "required": false
+        },
+        {
+          "id": "text_color",
+          "type": "string",
+          "format": "color",
+          "inputType": "color",
+          "label": "لون النصوص",
+          "description": null,
+          "labelHTML": null,
+          "icon": "sicon-format-fill",
+          "value": "#121212",
+          "required": false
+        },
+        {
+          "type": "string",
+          "icon": "sicon-image",
+          "value": "https://cdn.salla.sa/qQqDaW/WNagGMWwDNBReQ0M4PRBebRljCdqFDmgLeCOkJKk.png",
+          "id": "image",
+          "label": "صورة المنتج",
+          "format": "image",
+          "required": false,
+          "placeholder": null,
+          "description": ""
+        },
+        {
+          "type": "string",
+          "icon": "sicon-image",
+          "value": "https://cdn.salla.sa/qQqDaW/corWzPQIML1pgyGvg3bfxUacKAHTV5ChGVuNBuuV.png",
+          "id": "image1",
+          "label": "صورة خلفية ١",
+          "format": "image",
+          "required": false,
+          "placeholder": null,
+          "description": ""
+        },
+        {
+          "type": "string",
+          "icon": "sicon-image",
+          "value": "https://cdn.salla.sa/qQqDaW/IjjRosD6G9Den8wF8x7qbHuvmJUYrasdOCEjI7go.png",
+          "id": "image2",
+          "label": "صورة خلفية ٢",
+          "format": "image",
+          "required": false,
+          "placeholder": null,
+          "description": ""
+        },
+        {
+          "type": "string",
+          "icon": "sicon-image",
+          "value": "https://cdn.salla.sa/qQqDaW/cAsPZU63OeLcqFYHbthNYM1Vm7yyrUnZHluPz1tF.png",
+          "id": "image3",
+          "label": "صورة خلفية ٣",
+          "format": "image",
+          "required": false,
+          "placeholder": null,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "key": "9a758d20-2ce4-4782-91fe-c04466464081",
+      "title": "إحصائيات",
+      "icon": "sicon-list-play",
+      "name": "statistics",
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "static-desc",
+          "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img src='https://cdn.salla.network/images/themes/landing-page/statistics.png'></div>"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-toggle-off",
+          "label": "لون الخلفية",
+          "description": null,
+          "id": "bg_color",
+          "format": "color",
+          "required": false,
+          "value": "#ffffff",
+          "key": "1ce6c29b-c3f1-4d06-9582-d014938946d5"
+        },
+        {
+          "type": "boolean",
+          "icon": "sicon-toggle-off",
+          "label": "عرض الوحدات المتبقية",
+          "description": null,
+          "id": "show_remaining_quantity",
+          "format": "switch",
+          "required": false,
+          "value": false,
+          "selected": false,
+          "key": "85cdd03c-f5d2-4efd-aa62-acba9d6d91dd"
+        },
+        {
+          "type": "boolean",
+          "icon": "sicon-toggle-off",
+          "label": "عرض الوحدات المباعة",
+          "description": null,
+          "id": "show_sold_quantity",
+          "format": "switch",
+          "required": false,
+          "value": false,
+          "selected": false,
+          "key": "85cdd03c-f5d2-4efd-aa62-acba9d8d91dd"
+        },
+        {
+          "type": "boolean",
+          "icon": "sicon-toggle-off",
+          "label": "عرض التقييمات",
+          "description": null,
+          "id": "show_ratings",
+          "format": "switch",
+          "required": false,
+          "value": false,
+          "selected": false,
+          "key": "85cdd03c-f5d2-4efd-aa62-acba4d6d91dd"
+        },
+        {
+          "id": "items",
+          "type": "collection",
+          "format": "collection",
+          "required": true,
+          "minLength": 0,
+          "maxLength": 3,
+          "item_label": "إحصائية",
+          "value": [
+            {
+              "items.icon": "sicon-add-to-cart",
+              "items.numbers": "125",
+              "items.name": "الطلبات المكتملة"
+            },
+            {
+              "items.icon": "sicon-shipping-fast",
+              "items.numbers": "125",
+              "items.name": "طلبات تم توصليها"
+            },
+            {
+              "items.icon": "sicon-full-wallet",
+              "items.numbers": "125",
+              "items.name": "حوالة دفع"
+            }
+          ],
+          "fields": [
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "label": "عدد الاحصائية",
+              "id": "items.icon",
+              "value": "sicon-store2",
+              "required": false,
+              "format": "icon",
+              "class": "form--inline",
+              "description": null
+            },
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "multilanguage": true,
+              "id": "items.numbers",
+              "value": null,
+              "required": true,
+              "format": "text",
+              "description": null,
+              "placeholder": "",
+              "minLength": 2,
+              "maxLength": 80
+            },
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "multilanguage": true,
+              "id": "items.name",
+              "value": null,
+              "required": true,
+              "format": "text",
+              "description": null,
+              "placeholder": "",
+              "minLength": 2,
+              "maxLength": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2b1b130b-5b31-422a-9418-e0fd361090c0",
+      "title": "مميزات المنتج",
+      "icon": "sicon-layout-grid-rearrange",
+      "name": "product-features-list",
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "static-desc",
+          "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img src='https://cdn.salla.network/images/themes/landing-page/product-features.png'></div>"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان الرئيسي",
+          "multilanguage": true,
+          "id": "title",
+          "value": "تعرف على مميزات منتجناً",
+          "required": false,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنوان الرئيسي هنا...",
+          "minLength": 0,
+          "maxLength": 100
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان الفرعي",
+          "multilanguage": true,
+          "id": "sub_title",
+          "value": " ستنبهر من العديد من المميزات والمزايا التي لن تتخيلها.",
+          "required": false,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنوان الفرعي هنا...",
+          "minLength": 0,
+          "maxLength": 160
+        },
+        {
+          "type": "string",
+          "icon": "sicon-image",
+          "value": "https://cdn.salla.network/images/themes/landing-page/default-center-image.png",
+          "id": "central_image",
+          "label": "صورة",
+          "format": "image",
+          "required": true,
+          "placeholder": null,
+          "description": "",
+          "key": "9b8e7a45-3288-413c-8161-0598a9d09e05"
+        },
+        {
+          "id": "features",
+          "type": "collection",
+          "format": "collection",
+          "required": true,
+          "minLength": 2,
+          "maxLength": 6,
+          "item_label": "ميزة ",
+          "value": [
+            {
+              "features.name": "عنوان الميزة",
+              "features.desc": "ينعكس هنا وصف الميزة مباشرة.",
+              "features.image": "https://cdn.salla.network/images/themes/landing-page/default-bee-icon-1.png"
+            },
+            {
+              "features.name": "عنوان الميزة",
+              "features.desc": "ينعكس هنا وصف الميزة مباشرة.",
+              "features.image": "https://cdn.salla.network/images/themes/landing-page/default-bee-icon-2.png"
+            },
+            {
+              "features.name": "عنوان الميزة",
+              "features.desc": "ينعكس هنا وصف الميزة مباشرة.",
+              "features.image": "https://cdn.salla.network/images/themes/landing-page/default-bee-icon-3.png"
+            },
+            {
+              "features.name": "عنوان الميزة",
+              "features.desc": "ينعكس هنا وصف الميزة مباشرة.",
+              "features.image": "https://cdn.salla.network/images/themes/landing-page/default-bee-icon-4.png"
+            }
+          ],
+          "fields": [
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "multilanguage": true,
+              "id": "features.name",
+              "value": null,
+              "label": "الميزة",
+              "required": true,
+              "format": "text",
+              "description": null,
+              "placeholder": "أدخل الميزة هنا...",
+              "minLength": 2,
+              "maxLength": 80
+            },
+            {
+              "id": "features.desc",
+              "type": "string",
+              "format": "textarea",
+              "label": "وصف مختصر",
+              "description": null,
+              "labelHTML": null,
+              "placeholder": "إدخل الوصف ....",
+              "icon": "sicon-typography",
+              "value": null,
+              "multilanguage": true,
+              "required": false,
+              "minLength": "2",
+              "maxLength": 255
+            },
+            {
+              "type": "string",
+              "icon": "sicon-image",
+              "value": null,
+              "id": "features.image",
+              "label": "صورة",
+              "format": "image",
+              "required": false,
+              "placeholder": null,
+              "description": "",
+              "key": "9b8e7a45-3288-413c-8163-0590a9d09e00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "9a758d20-2ce4-4782-91fe-c04453464081",
+      "title": "فوائد المنتج",
+      "icon": "sicon-list-play",
+      "name": "benefits",
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "static-desc",
+          "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img src='https://cdn.salla.network/images/themes/landing-page/product-benefits.png'></div>"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان الرئيسي",
+          "multilanguage": true,
+          "id": "title",
+          "value": "التميز في التفاصيل: منافع منتجنا",
+          "required": false,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنوان الرئيسي هنا...",
+          "minLength": 0,
+          "maxLength": 100
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان الفرعي",
+          "multilanguage": true,
+          "id": "sub_title",
+          "value": "تعرف و استكشف عمق وتنوع منافع منتجنا.",
+          "required": false,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنوان الفرعي هنا...",
+          "minLength": 0,
+          "maxLength": 160
+        },
+        {
+          "id": "benefits",
+          "type": "collection",
+          "format": "collection",
+          "required": true,
+          "minLength": 1,
+          "maxLength": 6,
+          "item_label": "فائدة",
+          "value": [
+            {
+              "benefits.image": "https://cdn.salla.network/images/themes/landing-page/default-benefit-image.png",
+              "benefits.benefit": "عنوان المنفعة",
+              "benefits.description": "ينعكس هنا وصف المنفعة"
+            },
+            {
+              "benefits.image": "https://cdn.salla.network/images/themes/landing-page/default-benefit-image.png",
+              "benefits.benefit": "عنوان المنفعة",
+              "benefits.description": "ينعكس هنا وصف المنفعة"
+            },
+            {
+              "benefits.image": "https://cdn.salla.network/images/themes/landing-page/default-benefit-image.png",
+              "benefits.benefit": "عنوان المنفعة",
+              "benefits.description": "ينعكس هنا وصف المنفعة"
+            },
+            {
+              "benefits.image": "https://cdn.salla.network/images/themes/landing-page/default-benefit-image.png",
+              "benefits.benefit": "عنوان المنفعة",
+              "benefits.description": "ينعكس هنا وصف المنفعة"
+            },
+            {
+              "benefits.image": "https://cdn.salla.network/images/themes/landing-page/default-benefit-image.png",
+              "benefits.benefit": "عنوان المنفعة",
+              "benefits.description": "ينعكس هنا وصف المنفعة"
+            },
+            {
+              "benefits.image": "https://cdn.salla.network/images/themes/landing-page/default-benefit-image.png",
+              "benefits.benefit": "عنوان المنفعة",
+              "benefits.description": "ينعكس هنا وصف المنفعة"
+            }
+          ],
+          "fields": [
+            {
+              "type": "string",
+              "icon": "sicon-image",
+              "value": null,
+              "label": "صورة",
+              "id": "benefits.image",
+              "format": "image",
+              "required": true,
+              "placeholder": "",
+              "description": ""
+            },
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "multilanguage": true,
+              "id": "benefits.benefit",
+              "value": null,
+              "required": true,
+              "format": "text",
+              "description": null,
+              "placeholder": "أدخل الفائدة هنا...",
+              "minLength": 2,
+              "maxLength": 80
+            },
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "multilanguage": true,
+              "id": "benefits.description",
+              "value": null,
+              "required": false,
+              "format": "text",
+              "description": null,
+              "placeholder": "أدخل الوصف هنا...",
+              "minLength": 2,
+              "maxLength": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "25f6cf26-a53f-4954-9b32-719b311b30c7",
+      "title": "محتوى نصي",
+      "icon": "sicon-award-ribbon",
+      "name": "quotes",
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "static-desc",
+          "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img src='https://cdn.salla.network/images/themes/landing-page/quotes.png'></div>"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان الرئيسي",
+          "multilanguage": true,
+          "id": "title",
+          "value": " رحلة في عالم المزايا والإمكانيات.",
+          "required": true,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنوان هنا...",
+          "minLength": 0,
+          "maxLength": 100
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان الفرعي",
+          "multilanguage": true,
+          "id": "sub_title",
+          "value": " استكشاف عمق وتنوع منافع منتجنا: رحلة تفصيلية تبرز كيف يمكن لكل ميزة أن تحدث فرقًا في حياتك اليومية.",
+          "required": true,
+          "format": "textarea",
+          "description": null,
+          "placeholder": "أدخل العنوان هنا...",
+          "minLength": 0,
+          "maxLength": 200
+        }
+      ]
+    },
+    {
+      "key": "9a755d21-2ce4-4182-91fe-c04453464081",
+      "title": "اراء العملاء محسن",
+      "icon": "sicon-list-play",
+      "name": "enhanced-testimonials",
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "static-desc",
+          "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img src='https://cdn.salla.network/images/themes/landing-page/enhanced-testimonials.png'></div>",
+          "key": "b52b4cb2-7ba3-42cc-a8c4-815a8548684c"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان الرئيسي",
+          "multilanguage": true,
+          "id": "title",
+          "value": "أصوات حقيقية، تجارب ملهمة",
+          "required": false,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنوان الرئيسي هنا...",
+          "minLength": 0,
+          "maxLength": 100,
+          "key": "8c38f433-ec52-4e4a-a63d-e82329d44e73"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان الفرعي",
+          "multilanguage": true,
+          "id": "sub_title",
+          "value": "شاهد تجارب عملائنا و رأيهم حول منتجنا",
+          "required": false,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنوان الفرعي هنا...",
+          "minLength": 0,
+          "maxLength": 160,
+          "key": "f9143554-d2ce-47f6-9130-54ba1ed8c62c"
+        },
+        {
+          "id": "items",
+          "type": "collection",
+          "format": "collection",
+          "required": true,
+          "minLength": 3,
+          "maxLength": 6,
+          "item_label": "تقييم",
+          "value": [
+            {
+              "items.name": "محمد الحربي",
+              "items.avatar": "https://cdn.salla.network/images/themes/landing-page/default-avatar.png",
+              "items.text": "عالج لي القولون بفضل الله، لازم الكل يستفيد من فوائد عسل المانوكا و تعامل المتجر ممتاز و خدمة ممتازة.",
+              "items.voice_url": null,
+              "items.media_type": [
+                {
+                  "label": "صورة",
+                  "value": "image",
+                  "key": "98e34f13-dac3-48d5-892b-81a45d4fa797"
+                }
+              ],
+              "items.media_url": "https://cdn.salla.network/images/themes/landing-page/default-testimonials-image.png"
+            },
+            {
+              "items.name": "محمد الحربي",
+              "items.avatar": "https://cdn.salla.network/images/themes/landing-page/default-avatar.png",
+              "items.text": "عالج لي القولون بفضل الله، لازم الكل يستفيد من فوائد عسل المانوكا و تعامل المتجر ممتاز و خدمة ممتازة.",
+              "items.voice_url": null,
+              "items.media_type": [
+                {
+                  "label": "فيديو",
+                  "value": "video",
+                  "key": "f3bcfd5e-4feb-4f40-bf21-d9765b450ec2"
+                }
+              ],
+              "items.media_url": "https://www.youtube.com/watch?v=-sGGrMfMTew"
+            },
+            {
+              "items.name": "محمد الحربي",
+              "items.avatar": "https://cdn.salla.network/images/themes/landing-page/default-avatar.png",
+              "items.text": "عالج لي القولون بفضل الله، لازم الكل يستفيد من فوائد عسل المانوكا و تعامل المتجر ممتاز و خدمة ممتازة.",
+              "items.voice_url": "https://cdn.salla.network/images/themes/landing-page/default-testimonials-voice.png",
+              "items.media_type": null,
+              "items.media_url": null
+            }
+          ],
+          "fields": [
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "multilanguage": true,
+              "id": "items.name",
+              "value": null,
+              "required": true,
+              "format": "text",
+              "description": null,
+              "placeholder": "ادخل الاسم هنا...",
+              "minLength": 2,
+              "maxLength": 80,
+              "key": "7ca0ed34-8f3b-4c11-a31e-2dd0b98de8f5"
+            },
+            {
+              "type": "string",
+              "icon": "sicon-image",
+              "value": null,
+              "id": "avatar",
+              "label": "صورة",
+              "format": "image",
+              "required": true,
+              "placeholder": null,
+              "description": "الصورة الرمزية",
+              "key": "07d845af-9774-447e-8166-1e0a66c3055f"
+            },
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "multilanguage": true,
+              "id": "items.text",
+              "value": null,
+              "required": true,
+              "format": "textarea",
+              "description": null,
+              "placeholder": "ادخل رائ العميل هنا....",
+              "minLength": 2,
+              "maxLength": 160,
+              "key": "120cad0b-faac-496a-b871-abaea1aa57ff"
+            },
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "multilanguage": true,
+              "id": "items.voice_url",
+              "value": null,
+              "required": false,
+              "format": "text",
+              "description": "رابط مقطع صوتي لرائ العميل سيتم عرضه بدلا عن المحتوى النصي",
+              "placeholder": "ادخل الرابط هنا...",
+              "minLength": 2,
+              "maxLength": 200,
+              "key": "83222637-987c-417e-89e5-5bea3f2fae16"
+            },
+            {
+              "id": "items.media_type",
+              "type": "items",
+              "format": "radio-list",
+              "label": "إضافة محتوى مريئي",
+              "description": null,
+              "labelHTML": null,
+              "icon": "sicon-list",
+              "selected": [
+                {
+                  "label": "صورة",
+                  "value": "image",
+                  "key": "98e34f13-dac3-48d5-892b-81a45d4fa797"
+                }
+              ],
+              "options": [
+                {
+                  "label": "صورة",
+                  "value": "image",
+                  "key": "98e34f13-dac3-48d5-892b-81a45d4fa797"
+                },
+                {
+                  "label": "فيديو",
+                  "value": "video",
+                  "key": "f3bcfd5e-4feb-4f40-bf21-d9765b450ec2"
+                }
+              ],
+              "source": "manual",
+              "required": true,
+              "key": "79288d05-82fa-4289-a741-6ac557487ab6"
+            },
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "multilanguage": false,
+              "id": "items.media_url",
+              "value": null,
+              "required": false,
+              "format": "text",
+              "description": "رابط صورة او فيديو",
+              "placeholder": "ادخل الاسم هنا...",
+              "minLength": 2,
+              "maxLength": 200,
+              "key": "4baed813-b89d-41fe-9f1b-5fe1d7ac9872"
+            }
+          ],
+          "key": "e4513ead-26f8-4d7b-983d-d725288af460"
+        }
+      ]
+    },
+    {
+      "key": "9a758d21-2ce4-4182-91fe-c04453464081",
+      "title": "مقارنة",
+      "icon": "sicon-list-play",
+      "name": "comparison",
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "static-desc",
+          "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img src='https://cdn.salla.network/images/themes/landing-page/comparison.png'></div>"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان الرئيسي",
+          "multilanguage": true,
+          "id": "title",
+          "value": "مقارنة متقنة: تحليل المزايا بيننا وبين المنافسين",
+          "required": false,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنوان الرئيسي هنا...",
+          "minLength": 0,
+          "maxLength": 100
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان الفرعي",
+          "multilanguage": true,
+          "id": "sub_title",
+          "value": " كيف تفوق منتجنا من خلال مقارنة دقيقة وموضوعية مع منتجات منافسة. ",
+          "required": false,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنوان الفرعي هنا...",
+          "minLength": 0,
+          "maxLength": 160
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنصر الاول",
+          "multilanguage": true,
+          "id": "item_1",
+          "value": "اسم منتجك",
+          "required": true,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنصر الاول هنا...",
+          "minLength": 2,
+          "maxLength": 100
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنصر الثاني",
+          "multilanguage": true,
+          "id": "item_2",
+          "value": "اسم المنتج المنافس",
+          "required": true,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنصر الثاني هنا...",
+          "minLength": 2,
+          "maxLength": 100
+        },
+        {
+          "id": "items",
+          "type": "collection",
+          "format": "collection",
+          "required": true,
+          "minLength": 1,
+          "maxLength": 6,
+          "item_label": "مقارنة",
+          "value": [
+            {
+              "items.title": "مجال المقارنة",
+              "items.item_1_value": true,
+              "items.item_2_value": false
+            },
+            {
+              "items.title": "مجال المقارنة",
+              "items.item_1_value": true,
+              "items.item_2_value": false
+            },
+            {
+              "items.title": "مجال المقارنة",
+              "items.item_1_value": true,
+              "items.item_2_value": false
+            }
+          ],
+          "fields": [
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "multilanguage": true,
+              "id": "items.title",
+              "value": null,
+              "required": true,
+              "format": "text",
+              "description": null,
+              "placeholder": "آمن للاطفال",
+              "minLength": 2,
+              "maxLength": 80
+            },
+            {
+              "type": "boolean",
+              "icon": "sicon-toggle-off",
+              "label": "قيمة العنصر الاول",
+              "description": "",
+              "id": "items.item_1_value",
+              "format": "switch",
+              "required": false,
+              "value": true,
+              "selected": true
+            },
+            {
+              "type": "boolean",
+              "icon": "sicon-toggle-off",
+              "label": "قيمة العنصر الثاني",
+              "description": "",
+              "id": "items.item_2_value",
+              "format": "switch",
+              "required": false,
+              "value": false,
+              "selected": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2b1b130b-5b37-422a-9613-e0fd367060c0",
+      "title": "شهادات",
+      "icon": "sicon-layout-grid-rearrange",
+      "name": "certificates",
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "static-desc",
+          "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img src='https://cdn.salla.network/images/themes/landing-page/certificates.png'></div>"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان الرئيسي",
+          "multilanguage": true,
+          "id": "title",
+          "value": "نفخر ونعتز بشهادات الجهات المعتمدة ",
+          "required": false,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنوان هنا...",
+          "minLength": 0,
+          "maxLength": 100
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان الفرعي",
+          "multilanguage": true,
+          "id": "sub_title",
+          "value": "بشهادات تثبت الثقة لعملائنا و اننا نضمن لهم افضل الجودة و الخدمة",
+          "required": false,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنوان هنا...",
+          "minLength": 0,
+          "maxLength": 160
+        },
+        {
+          "id": "logos",
+          "type": "collection",
+          "format": "collection",
+          "required": true,
+          "minLength": 3,
+          "maxLength": 3,
+          "item_label": "شعار ",
+          "value": [
+            {
+              "logos.name": "هيئة الزكاة و الضريبة",
+              "logos.image": "https://cdn.salla.network/images/themes/landing-page/default-certi-logo-1.png",
+              "logos.url": "https://zatca.gov.sa/ar/Pages/default.aspx"
+            },
+            {
+              "logos.name": "معروف",
+              "logos.image": "https://cdn.salla.network/images/themes/landing-page/default-certi-logo-2.png",
+              "logos.url": "https://maroof.sa/"
+            },
+            {
+              "logos.name": "المركز السعودي للاعمال",
+              "logos.image": "https://cdn.salla.network/images/themes/landing-page/default-certi-logo-3.png",
+              "logos.url": "https://business.sa/"
+            }
+          ],
+          "fields": [
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "multilanguage": true,
+              "id": "logos.name",
+              "value": null,
+              "required": true,
+              "format": "text",
+              "description": null,
+              "placeholder": "أدخل الاسم هنا...",
+              "minLength": 2,
+              "maxLength": 80
+            },
+            {
+              "type": "string",
+              "icon": "sicon-image",
+              "value": null,
+              "label": "صورة الشعار",
+              "id": "logos.image",
+              "format": "image",
+              "required": true,
+              "placeholder": "",
+              "description": ""
+            },
+            {
+              "type": "string",
+              "icon": "sicon-link",
+              "label": "الرابط",
+              "id": "logos.url",
+              "value": null,
+              "description": null,
+              "required": false,
+              "format": "text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2b1b130b-5b37-422a-9418-e0fd367060c0",
+      "title": "الأسئلة الشائعة",
+      "icon": "sicon-layout-grid-rearrange",
+      "name": "questions",
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "static-desc",
+          "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img src='https://cdn.salla.network/images/themes/landing-page/faqs.png'></div>"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان الرئيسي",
+          "multilanguage": true,
+          "id": "title",
+          "value": "أهم الاسئلة الشائعة وإجابتها",
+          "required": false,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنوان الرئيسي هنا...",
+          "minLength": 0,
+          "maxLength": 100
+        },
+        {
+          "type": "string",
+          "icon": "sicon-format-text-alt",
+          "label": "العنوان الفرعي",
+          "multilanguage": true,
+          "id": "sub_title",
+          "value": "استعراض شامل لأهم الأسئلة الشائعة التي يتساءل عنها الكثيرون اكتشف إجابات مفصلة وموثوقة تساعدك على فهم المفاهيم والمعلومات بشكل أفضل",
+          "required": false,
+          "format": "text",
+          "description": null,
+          "placeholder": "أدخل العنوان الفرعي هنا...",
+          "minLength": 0,
+          "maxLength": 160
+        },
+        {
+          "id": "faqs",
+          "type": "collection",
+          "format": "collection",
+          "required": true,
+          "minLength": 1,
+          "maxLength": 5,
+          "item_label": "سؤال ",
+          "value": [
+            {
+              "faqs.question": "كيف استخدم المنتج ؟",
+              "faqs.answer": "طريقة استخدم المنتج"
+            },
+            {
+              "faqs.question": "ماهي خدمة ما بعد البيع ؟",
+              "faqs.answer": " خدمة ما بعد البيع"
+            },
+            {
+              "faqs.question": "ماهي سياسة الاستبدال والاسترجاع ؟",
+              "faqs.answer": " سياسة الاستبدال والاسترجاع"
+            },
+            {
+              "faqs.question": "ماهي طريقة الطلب من الموقع؟",
+              "faqs.answer": "اختر المنتج من الموقع ثم أدخل بياناتك واختر طريقة الدفع وقم باتمام الطلب وسيكون الطلب في طريقه إليك او تستطيع الطلب عبر قنوات خدمات العملاء."
+            }
+          ],
+          "fields": [
+            {
+              "type": "string",
+              "icon": "sicon-format-text-alt",
+              "multilanguage": true,
+              "id": "faqs.question",
+              "value": null,
+              "label": "السؤال",
+              "required": true,
+              "format": "text",
+              "description": null,
+              "placeholder": "أدخل السؤال هنا...",
+              "minLength": 2,
+              "maxLength": 80
+            },
+            {
+              "id": "faqs.answer",
+              "type": "string",
+              "format": "textarea",
+              "label": "نص الإجابة",
+              "description": null,
+              "labelHTML": null,
+              "placeholder": "إدخل إجابة السؤال ....",
+              "icon": "sicon-typography",
+              "value": null,
+              "multilanguage": true,
+              "required": true,
+              "minLength": "2",
+              "maxLength": 255
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "9a758d21-2ce4-4182-91fe-c04453464011",
+      "title": "معلومات المتجر",
+      "icon": "sicon-layout-grid-rearrange",
+      "name": "store-info",
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "static-desc",
+          "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img src='https://cdn.salla.network/images/themes/landing-page/store-info.png'></div>"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-toggle-off",
+          "label": "لون الخلفية",
+          "description": null,
+          "id": "bg_color",
+          "format": "color",
+          "required": false,
+          "value": "#F2F5F7",
+          "key": "1ce6c29b-c3f1-4d31-9582-d014938046d5"
+        },
+        {
+          "type": "boolean",
+          "icon": "sicon-toggle-off",
+          "label": "عرض تقييمات المتجر",
+          "description": null,
+          "id": "show_store_rating",
+          "format": "switch",
+          "required": false,
+          "value": true,
+          "selected": false,
+          "key": "85cdd03c-f5d2-4efd-aa22-acba9d6d91dd"
+        }
+      ]
     }
   ]
 }
