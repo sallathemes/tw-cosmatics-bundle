@@ -281,6 +281,7 @@
       "title": "بنر إعلاني متحرك",
       "icon": "sicon-image-carousel",
       "name": "marquee",
+      "image": "https://cdn.salla.network/images/themes/landing-page/marquee.png",
       "fields": [
         {
           "type": "static",
@@ -321,22 +322,22 @@
           "item_label": "نص إعلاني",
           "value": [
             {
-              "texts.title": "شحن مجاني لجميع انحاء المملكة"
+              "title": "شحن مجاني لجميع انحاء المملكة"
             },
             {
-              "texts.title": "تخفيضات نهاية العام"
+              "title": "تخفيضات نهاية العام"
             },
             {
-              "texts.title": "خصم إضافي 5٪ عند الدفع عن طريق البطاقات البنكية و أبل باي"
+              "title": "خصم إضافي 5٪ عند الدفع عن طريق البطاقات البنكية و أبل باي"
             },
             {
-              "texts.title": "شحن مجاني لجميع انحاء المملكة"
+              "title": "شحن مجاني لجميع انحاء المملكة"
             },
             {
-              "texts.title": "تخفيضات نهاية العام"
+              "title": "تخفيضات نهاية العام"
             },
             {
-              "texts.title": "خصم إضافي 5٪ عند الدفع عن طريق البطاقات البنكية و أبل باي"
+              "title": "خصم إضافي 5٪ عند الدفع عن طريق البطاقات البنكية و أبل باي"
             }
           ],
           "fields": [
@@ -345,7 +346,7 @@
               "icon": "sicon-format-text-alt",
               "label": "نص إعلاني",
               "multilanguage": true,
-              "id": "texts.title",
+              "id": "title",
               "value": null,
               "required": false,
               "format": "text",
