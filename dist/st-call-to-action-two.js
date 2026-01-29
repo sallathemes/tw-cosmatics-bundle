@@ -1,19 +1,19 @@
-import { LitElement as n, html as i } from "lit";
-import { property as r } from "lit/decorators.js";
-var d = Object.defineProperty, p = (o, t, c, f) => {
-  for (var e = void 0, l = o.length - 1, s; l >= 0; l--)
-    (s = o[l]) && (e = s(t, c, e) || e);
-  return e && d(t, c, e), e;
+import { LitElement as d, html as o } from "lit";
+import { property as p, state as u } from "lit/decorators.js";
+var _ = Object.defineProperty, n = (a, t, e, l) => {
+  for (var i = void 0, r = a.length - 1, s; r >= 0; r--)
+    (s = a[r]) && (i = s(t, e, i) || i);
+  return i && _(t, e, i), i;
 };
-class a extends n {
+class c extends d {
   constructor() {
-    super(...arguments), this.styleElement = null;
+    super(...arguments), this.product = void 0, this.styleElement = null;
   }
   createRenderRoot() {
     return this;
   }
   connectedCallback() {
-    super.connectedCallback(), this.injectStyles();
+    super.connectedCallback(), this.injectStyles(), this.product = window.product;
   }
   disconnectedCallback() {
     var t;
@@ -57,13 +57,117 @@ class a extends n {
         width: 370px;
         flex-shrink: 0;
       }
+
+      .st-call-to-action-two__product-card {
+        position: relative;
+        width: 100%;
+      }
+
+      .st-call-to-action-two__product-image {
+        height: 404px;
+        width: 100%;
+        overflow: hidden;
+        background-color: #e5e7eb;
+        margin-bottom: 1rem;
+        position: relative;
+      }
+
+      .st-call-to-action-two__product-image:hover {
+        opacity: 0.75;
+      }
+
+      .st-call-to-action-two__product-image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .st-call-to-action-two__product-content {
+        text-align: center;
+      }
+
+      .st-call-to-action-two__product-name {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 1.25rem;
+      }
+
+      .st-call-to-action-two__product-price {
+        display: inline-flex;
+        align-items: center;
+        gap: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .st-call-to-action-two__sale-price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-color, #000);
+      }
+
+      .st-call-to-action-two__regular-price {
+        font-size: 1rem;
+        text-decoration: line-through;
+        opacity: 0.6;
+      }
+
+      .st-call-to-action-two__rating {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .st-call-to-action-two__button-wrap {
+        display: flex;
+        justify-content: center;
+      }
     `, document.head.appendChild(this.styleElement));
+  }
+  renderProductCard() {
+    var e, l;
+    if (!this.product)
+      return o`<div>Product data not available</div>`;
+    const t = this.product.sale_price && this.product.sale_price !== this.product.regular_price;
+    return o`
+      <div class="st-call-to-action-two__product-card">
+        <div class="st-call-to-action-two__product-image">
+          <img src="${(e = this.product.image) == null ? void 0 : e.url}" alt="${this.product.name}" />
+        </div>
+        <div class="st-call-to-action-two__product-content">
+          <h3 class="st-call-to-action-two__product-name">
+            ${this.product.name}
+          </h3>
+          <div class="st-call-to-action-two__product-price">
+            ${t ? o`
+              <span class="st-call-to-action-two__sale-price">
+                ${this.product.sale_price} ${this.product.currency}
+              </span>
+              <span class="st-call-to-action-two__regular-price">
+                ${this.product.regular_price} ${this.product.currency}
+              </span>
+            ` : o`
+              <span class="st-call-to-action-two__sale-price">
+                ${this.product.price} ${this.product.currency}
+              </span>
+            `}
+          </div>
+          <div class="st-call-to-action-two__rating">
+            <salla-rating-stars size="large" value="${((l = this.product.rating) == null ? void 0 : l.stars) || 5}"></salla-rating-stars>
+          </div>
+          <div class="st-call-to-action-two__button-wrap">
+            <salla-add-product-button width="wide"></salla-add-product-button>
+          </div>
+        </div>
+      </div>
+    `;
   }
   render() {
     if (!this.config)
-      return i`<div>Configuration is required</div>`;
+      return o`<div>Configuration is required</div>`;
     const t = this.config.bg_color || "#ffffff";
-    return i`
+    return o`
       <div
         class="st-call-to-action-two s-block"
         style="background-color: ${t};"
@@ -71,7 +175,7 @@ class a extends n {
         <div class="container">
           <div class="st-call-to-action-two__wrapper">
             <div class="st-call-to-action-two__image-col">
-              ${this.config.image ? i`
+              ${this.config.image ? o`
                 <img
                   src="${this.config.image}"
                   alt=""
@@ -80,7 +184,7 @@ class a extends n {
               ` : ""}
             </div>
             <div class="st-call-to-action-two__product-col">
-              <salla-product-card></salla-product-card>
+              ${this.renderProductCard()}
             </div>
           </div>
         </div>
@@ -88,10 +192,13 @@ class a extends n {
     `;
   }
 }
-p([
-  r({ type: Object })
-], a.prototype, "config");
-typeof a < "u" && a.registerSallaComponent("salla-st-call-to-action-two");
+n([
+  p({ type: Object })
+], c.prototype, "config");
+n([
+  u()
+], c.prototype, "product");
+typeof c < "u" && c.registerSallaComponent("salla-st-call-to-action-two");
 export {
-  a as default
+  c as default
 };

@@ -1606,6 +1606,915 @@
           "maxLength": 500
         }
       ]
+    },
+    {
+      "key": "b5c6d7e8-9f0a-1b2c-3d4e-5f6a7b8c9d0e",
+      "title": "آراء العملاء (بيوتي)",
+      "icon": "sicon-star2",
+      "name": "st-testimonials",
+      "fields": [
+        {
+          "type": "static",
+          "format": "title",
+          "id": "header_section",
+          "value": "الإعدادات الأساسية",
+          "variant": "h6"
+        },
+        {
+          "id": "title",
+          "type": "string",
+          "format": "text",
+          "label": "العنوان الرئيسي",
+          "placeholder": "أدخل العنوان الرئيسي...",
+          "icon": "sicon-format-text-alt",
+          "value": "أصوات حقيقية، تجارب ملهمة",
+          "multilanguage": true,
+          "required": true,
+          "minLength": 2,
+          "maxLength": 100
+        },
+        {
+          "id": "subtitle",
+          "type": "string",
+          "format": "text",
+          "label": "العنوان الفرعي",
+          "placeholder": "أدخل العنوان الفرعي...",
+          "icon": "sicon-format-text-alt",
+          "value": "شاهد تجارب عملائنا و رأيهم حول منتجنا",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 200
+        },
+        {
+          "id": "bg_color",
+          "type": "string",
+          "format": "color",
+          "inputType": "color",
+          "label": "لون الخلفية",
+          "icon": "sicon-format-fill",
+          "value": "#f9fafb",
+          "required": false
+        },
+        {
+          "id": "text_color",
+          "type": "string",
+          "format": "color",
+          "inputType": "color",
+          "label": "لون النصوص",
+          "icon": "sicon-format-fill",
+          "value": "#121212",
+          "required": false
+        },
+        {
+          "type": "static",
+          "id": "testimonial1_line",
+          "format": "line"
+        },
+        {
+          "type": "static",
+          "format": "title",
+          "id": "testimonial1_section",
+          "value": "التقييم الأول",
+          "variant": "h6"
+        },
+        {
+          "id": "testimonial1_name",
+          "type": "string",
+          "format": "text",
+          "label": "اسم العميل",
+          "placeholder": "أدخل اسم العميل...",
+          "icon": "sicon-user",
+          "value": "محمد الحربي",
+          "multilanguage": true,
+          "required": true,
+          "minLength": 2,
+          "maxLength": 50
+        },
+        {
+          "id": "testimonial1_content",
+          "type": "string",
+          "format": "textarea",
+          "label": "رأي العميل",
+          "placeholder": "أدخل رأي العميل...",
+          "icon": "sicon-format-text-alt",
+          "value": "منتج رائع جداً، أنصح به الجميع. خدمة ممتازة وتوصيل سريع.",
+          "multilanguage": true,
+          "required": true,
+          "minLength": 2,
+          "maxLength": 300
+        },
+        {
+          "type": "string",
+          "icon": "sicon-image",
+          "value": "https://cdn.salla.network/images/themes/landing-page/default-avatar.png",
+          "id": "testimonial1_avatar",
+          "label": "صورة العميل",
+          "format": "image",
+          "required": false,
+          "placeholder": null,
+          "description": ""
+        },
+        {
+          "id": "testimonial1_rating",
+          "type": "number",
+          "format": "number",
+          "label": "التقييم (1-5)",
+          "icon": "sicon-star2",
+          "value": 5,
+          "required": false,
+          "min": 1,
+          "max": 5
+        },
+        {
+          "type": "static",
+          "id": "testimonial2_line",
+          "format": "line"
+        },
+        {
+          "type": "static",
+          "format": "title",
+          "id": "testimonial2_section",
+          "value": "التقييم الثاني",
+          "variant": "h6"
+        },
+        {
+          "id": "testimonial2_name",
+          "type": "string",
+          "format": "text",
+          "label": "اسم العميل",
+          "placeholder": "أدخل اسم العميل...",
+          "icon": "sicon-user",
+          "value": "سارة العتيبي",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 50
+        },
+        {
+          "id": "testimonial2_content",
+          "type": "string",
+          "format": "textarea",
+          "label": "رأي العميل",
+          "placeholder": "أدخل رأي العميل...",
+          "icon": "sicon-format-text-alt",
+          "value": "تجربة شراء مميزة، المنتج وصل بحالة ممتازة.",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 300
+        },
+        {
+          "type": "string",
+          "icon": "sicon-image",
+          "value": "https://cdn.salla.network/images/themes/landing-page/default-avatar.png",
+          "id": "testimonial2_avatar",
+          "label": "صورة العميل",
+          "format": "image",
+          "required": false,
+          "placeholder": null,
+          "description": ""
+        },
+        {
+          "id": "testimonial2_rating",
+          "type": "number",
+          "format": "number",
+          "label": "التقييم (1-5)",
+          "icon": "sicon-star2",
+          "value": 5,
+          "required": false,
+          "min": 1,
+          "max": 5
+        },
+        {
+          "type": "static",
+          "id": "testimonial3_line",
+          "format": "line"
+        },
+        {
+          "type": "static",
+          "format": "title",
+          "id": "testimonial3_section",
+          "value": "التقييم الثالث",
+          "variant": "h6"
+        },
+        {
+          "id": "testimonial3_name",
+          "type": "string",
+          "format": "text",
+          "label": "اسم العميل",
+          "placeholder": "أدخل اسم العميل...",
+          "icon": "sicon-user",
+          "value": "أحمد السالم",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 50
+        },
+        {
+          "id": "testimonial3_content",
+          "type": "string",
+          "format": "textarea",
+          "label": "رأي العميل",
+          "placeholder": "أدخل رأي العميل...",
+          "icon": "sicon-format-text-alt",
+          "value": "جودة عالية وسعر مناسب، سأطلب مرة أخرى بالتأكيد.",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 300
+        },
+        {
+          "type": "string",
+          "icon": "sicon-image",
+          "value": "https://cdn.salla.network/images/themes/landing-page/default-avatar.png",
+          "id": "testimonial3_avatar",
+          "label": "صورة العميل",
+          "format": "image",
+          "required": false,
+          "placeholder": null,
+          "description": ""
+        },
+        {
+          "id": "testimonial3_rating",
+          "type": "number",
+          "format": "number",
+          "label": "التقييم (1-5)",
+          "icon": "sicon-star2",
+          "value": 5,
+          "required": false,
+          "min": 1,
+          "max": 5
+        },
+        {
+          "type": "static",
+          "id": "testimonial4_line",
+          "format": "line"
+        },
+        {
+          "type": "static",
+          "format": "title",
+          "id": "testimonial4_section",
+          "value": "التقييم الرابع",
+          "variant": "h6"
+        },
+        {
+          "id": "testimonial4_name",
+          "type": "string",
+          "format": "text",
+          "label": "اسم العميل",
+          "placeholder": "أدخل اسم العميل...",
+          "icon": "sicon-user",
+          "value": "",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 50
+        },
+        {
+          "id": "testimonial4_content",
+          "type": "string",
+          "format": "textarea",
+          "label": "رأي العميل",
+          "placeholder": "أدخل رأي العميل...",
+          "icon": "sicon-format-text-alt",
+          "value": "",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 300
+        },
+        {
+          "type": "string",
+          "icon": "sicon-image",
+          "value": "",
+          "id": "testimonial4_avatar",
+          "label": "صورة العميل",
+          "format": "image",
+          "required": false,
+          "placeholder": null,
+          "description": ""
+        },
+        {
+          "id": "testimonial4_rating",
+          "type": "number",
+          "format": "number",
+          "label": "التقييم (1-5)",
+          "icon": "sicon-star2",
+          "value": 5,
+          "required": false,
+          "min": 1,
+          "max": 5
+        }
+      ]
+    },
+    {
+      "key": "c6d7e8f9-0a1b-2c3d-4e5f-6a7b8c9d0e1f",
+      "title": "الفوتر (بيوتي)",
+      "icon": "sicon-layout-footer",
+      "name": "st-footer",
+      "fields": [
+        {
+          "type": "static",
+          "format": "title",
+          "id": "header_section",
+          "value": "الإعدادات الأساسية",
+          "variant": "h6"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-image",
+          "value": "",
+          "id": "logo",
+          "label": "شعار المتجر",
+          "format": "image",
+          "required": false,
+          "placeholder": null,
+          "description": ""
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "format": "textarea",
+          "label": "وصف المتجر",
+          "placeholder": "أدخل وصف المتجر...",
+          "icon": "sicon-format-text-alt",
+          "value": "يتميز متجرنا بتقديم أفضل المنتجات بجودة عالية وأسعار مناسبة مع خدمة عملاء متميزة.",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 300
+        },
+        {
+          "id": "bg_color",
+          "type": "string",
+          "format": "color",
+          "inputType": "color",
+          "label": "لون الخلفية",
+          "icon": "sicon-format-fill",
+          "value": "#ffffff",
+          "required": false
+        },
+        {
+          "id": "text_color",
+          "type": "string",
+          "format": "color",
+          "inputType": "color",
+          "label": "لون النصوص",
+          "icon": "sicon-format-fill",
+          "value": "#121212",
+          "required": false
+        },
+        {
+          "type": "static",
+          "id": "nav_line",
+          "format": "line"
+        },
+        {
+          "type": "static",
+          "format": "title",
+          "id": "nav_section",
+          "value": "روابط التنقل",
+          "variant": "h6"
+        },
+        {
+          "id": "nav1_text",
+          "type": "string",
+          "format": "text",
+          "label": "نص الرابط الأول",
+          "placeholder": "أدخل نص الرابط...",
+          "icon": "sicon-link",
+          "value": "معلومات عنا",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 30
+        },
+        {
+          "id": "nav1_url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط URL",
+          "placeholder": "أدخل الرابط...",
+          "icon": "sicon-link",
+          "value": "#",
+          "required": false,
+          "minLength": 0,
+          "maxLength": 200
+        },
+        {
+          "id": "nav2_text",
+          "type": "string",
+          "format": "text",
+          "label": "نص الرابط الثاني",
+          "placeholder": "أدخل نص الرابط...",
+          "icon": "sicon-link",
+          "value": "اتصل بنا",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 30
+        },
+        {
+          "id": "nav2_url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط URL",
+          "placeholder": "أدخل الرابط...",
+          "icon": "sicon-link",
+          "value": "#",
+          "required": false,
+          "minLength": 0,
+          "maxLength": 200
+        },
+        {
+          "id": "nav3_text",
+          "type": "string",
+          "format": "text",
+          "label": "نص الرابط الثالث",
+          "placeholder": "أدخل نص الرابط...",
+          "icon": "sicon-link",
+          "value": "سياسة الخصوصية",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 30
+        },
+        {
+          "id": "nav3_url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط URL",
+          "placeholder": "أدخل الرابط...",
+          "icon": "sicon-link",
+          "value": "#",
+          "required": false,
+          "minLength": 0,
+          "maxLength": 200
+        },
+        {
+          "id": "nav4_text",
+          "type": "string",
+          "format": "text",
+          "label": "نص الرابط الرابع",
+          "placeholder": "أدخل نص الرابط...",
+          "icon": "sicon-link",
+          "value": "شروط الاستخدام",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 30
+        },
+        {
+          "id": "nav4_url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط URL",
+          "placeholder": "أدخل الرابط...",
+          "icon": "sicon-link",
+          "value": "#",
+          "required": false,
+          "minLength": 0,
+          "maxLength": 200
+        },
+        {
+          "id": "nav5_text",
+          "type": "string",
+          "format": "text",
+          "label": "نص الرابط الخامس",
+          "placeholder": "أدخل نص الرابط...",
+          "icon": "sicon-link",
+          "value": "",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 30
+        },
+        {
+          "id": "nav5_url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط URL",
+          "placeholder": "أدخل الرابط...",
+          "icon": "sicon-link",
+          "value": "",
+          "required": false,
+          "minLength": 0,
+          "maxLength": 200
+        },
+        {
+          "type": "static",
+          "id": "social_line",
+          "format": "line"
+        },
+        {
+          "type": "static",
+          "format": "title",
+          "id": "social_section",
+          "value": "روابط التواصل الاجتماعي",
+          "variant": "h6"
+        },
+        {
+          "id": "facebook_url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط فيسبوك",
+          "placeholder": "أدخل رابط فيسبوك...",
+          "icon": "sicon-facebook",
+          "value": "",
+          "required": false,
+          "minLength": 0,
+          "maxLength": 200
+        },
+        {
+          "id": "instagram_url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط انستقرام",
+          "placeholder": "أدخل رابط انستقرام...",
+          "icon": "sicon-instagram",
+          "value": "",
+          "required": false,
+          "minLength": 0,
+          "maxLength": 200
+        },
+        {
+          "id": "twitter_url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط تويتر",
+          "placeholder": "أدخل رابط تويتر...",
+          "icon": "sicon-twitter",
+          "value": "",
+          "required": false,
+          "minLength": 0,
+          "maxLength": 200
+        },
+        {
+          "id": "youtube_url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط يوتيوب",
+          "placeholder": "أدخل رابط يوتيوب...",
+          "icon": "sicon-youtube",
+          "value": "",
+          "required": false,
+          "minLength": 0,
+          "maxLength": 200
+        },
+        {
+          "id": "snapchat_url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط سناب شات",
+          "placeholder": "أدخل رابط سناب شات...",
+          "icon": "sicon-snapchat",
+          "value": "",
+          "required": false,
+          "minLength": 0,
+          "maxLength": 200
+        },
+        {
+          "id": "tiktok_url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط تيك توك",
+          "placeholder": "أدخل رابط تيك توك...",
+          "icon": "sicon-tiktok",
+          "value": "",
+          "required": false,
+          "minLength": 0,
+          "maxLength": 200
+        },
+        {
+          "type": "static",
+          "id": "meta_line",
+          "format": "line"
+        },
+        {
+          "type": "static",
+          "format": "title",
+          "id": "meta_section",
+          "value": "شارات الثقة",
+          "variant": "h6"
+        },
+        {
+          "type": "string",
+          "icon": "sicon-image",
+          "value": "",
+          "id": "meta1_image",
+          "label": "صورة الشارة الأولى",
+          "format": "image",
+          "required": false,
+          "placeholder": null,
+          "description": ""
+        },
+        {
+          "id": "meta1_subtitle",
+          "type": "string",
+          "format": "text",
+          "label": "عنوان فرعي",
+          "placeholder": "مثال: سجل ضريبي",
+          "icon": "sicon-format-text-alt",
+          "value": "",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 30
+        },
+        {
+          "id": "meta1_title",
+          "type": "string",
+          "format": "text",
+          "label": "عنوان رئيسي",
+          "placeholder": "مثال: 546987552",
+          "icon": "sicon-format-text-alt",
+          "value": "",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 30
+        },
+        {
+          "id": "meta1_url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط URL",
+          "placeholder": "أدخل الرابط...",
+          "icon": "sicon-link",
+          "value": "",
+          "required": false,
+          "minLength": 0,
+          "maxLength": 200
+        },
+        {
+          "type": "string",
+          "icon": "sicon-image",
+          "value": "",
+          "id": "meta2_image",
+          "label": "صورة الشارة الثانية",
+          "format": "image",
+          "required": false,
+          "placeholder": null,
+          "description": ""
+        },
+        {
+          "id": "meta2_subtitle",
+          "type": "string",
+          "format": "text",
+          "label": "عنوان فرعي",
+          "placeholder": "مثال: موثق لدى",
+          "icon": "sicon-format-text-alt",
+          "value": "",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 30
+        },
+        {
+          "id": "meta2_title",
+          "type": "string",
+          "format": "text",
+          "label": "عنوان رئيسي",
+          "placeholder": "مثال: منصة الأعمال",
+          "icon": "sicon-format-text-alt",
+          "value": "",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 30
+        },
+        {
+          "id": "meta2_url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط URL",
+          "placeholder": "أدخل الرابط...",
+          "icon": "sicon-link",
+          "value": "",
+          "required": false,
+          "minLength": 0,
+          "maxLength": 200
+        },
+        {
+          "type": "static",
+          "id": "bottom_line",
+          "format": "line"
+        },
+        {
+          "type": "static",
+          "format": "title",
+          "id": "bottom_section",
+          "value": "الشريط السفلي",
+          "variant": "h6"
+        },
+        {
+          "id": "copyright_text",
+          "type": "string",
+          "format": "text",
+          "label": "نص حقوق النشر",
+          "placeholder": "أدخل نص حقوق النشر...",
+          "icon": "sicon-format-text-alt",
+          "value": "© جميع الحقوق محفوظة",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 100
+        },
+        {
+          "id": "powered_by_text",
+          "type": "string",
+          "format": "text",
+          "label": "نص المنصة",
+          "placeholder": "أدخل نص المنصة...",
+          "icon": "sicon-format-text-alt",
+          "value": "صنع بإتقان على منصة سلة",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 100
+        }
+      ]
+    },
+    {
+      "key": "d7e8f9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+      "title": "النشرة البريدية (بيوتي)",
+      "icon": "sicon-envelope",
+      "name": "st-newsletter",
+      "fields": [
+        {
+          "id": "title",
+          "type": "string",
+          "format": "text",
+          "label": "العنوان",
+          "placeholder": "أدخل العنوان...",
+          "icon": "sicon-format-text-alt",
+          "value": "النشرة الإخبارية",
+          "multilanguage": true,
+          "required": true,
+          "minLength": 2,
+          "maxLength": 50
+        },
+        {
+          "id": "subtitle",
+          "type": "string",
+          "format": "text",
+          "label": "العنوان الفرعي",
+          "placeholder": "أدخل العنوان الفرعي...",
+          "icon": "sicon-format-text-alt",
+          "value": "كن أول من يعرف عن الخصومات والعروض والأحداث",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 100
+        },
+        {
+          "id": "placeholder",
+          "type": "string",
+          "format": "text",
+          "label": "نص حقل الإدخال",
+          "placeholder": "أدخل النص...",
+          "icon": "sicon-format-text-alt",
+          "value": "ادخل ايميلك الشخصي",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 50
+        },
+        {
+          "id": "button_text",
+          "type": "string",
+          "format": "text",
+          "label": "نص الزر",
+          "placeholder": "أدخل نص الزر...",
+          "icon": "sicon-format-text-alt",
+          "value": "اشترك الآن",
+          "multilanguage": true,
+          "required": false,
+          "minLength": 0,
+          "maxLength": 30
+        },
+        {
+          "type": "static",
+          "id": "colors_line",
+          "format": "line"
+        },
+        {
+          "type": "static",
+          "format": "title",
+          "id": "colors_section",
+          "value": "الألوان",
+          "variant": "h6"
+        },
+        {
+          "id": "bg_color",
+          "type": "string",
+          "format": "color",
+          "inputType": "color",
+          "label": "لون الخلفية",
+          "icon": "sicon-format-fill",
+          "value": "#4f46e5",
+          "required": false
+        },
+        {
+          "id": "text_color",
+          "type": "string",
+          "format": "color",
+          "inputType": "color",
+          "label": "لون النصوص",
+          "icon": "sicon-format-fill",
+          "value": "#ffffff",
+          "required": false
+        },
+        {
+          "id": "button_bg_color",
+          "type": "string",
+          "format": "color",
+          "inputType": "color",
+          "label": "لون خلفية الزر",
+          "icon": "sicon-format-fill",
+          "value": "#ffffff",
+          "required": false
+        },
+        {
+          "id": "button_text_color",
+          "type": "string",
+          "format": "color",
+          "inputType": "color",
+          "label": "لون نص الزر",
+          "icon": "sicon-format-fill",
+          "value": "#4f46e5",
+          "required": false
+        }
+      ]
+    },
+    {
+      "key": "st-header-001",
+      "title": "الهيدر (بيوتي)",
+      "icon": "sicon-web-view",
+      "name": "st-header",
+      "image": "",
+      "fields": [
+        {
+          "type": "static",
+          "format": "title",
+          "id": "logo_section",
+          "value": "الشعار",
+          "variant": "h6"
+        },
+        {
+          "id": "logo",
+          "type": "string",
+          "format": "image",
+          "label": "شعار المتجر",
+          "icon": "sicon-image",
+          "value": "",
+          "required": false,
+          "description": "اتركه فارغاً لاستخدام شعار المتجر الافتراضي"
+        },
+        {
+          "type": "static",
+          "format": "line"
+        },
+        {
+          "type": "static",
+          "format": "title",
+          "id": "settings_section",
+          "value": "الإعدادات",
+          "variant": "h6"
+        },
+        {
+          "id": "sticky",
+          "type": "boolean",
+          "format": "switch",
+          "label": "تثبيت الهيدر",
+          "icon": "sicon-pin",
+          "value": true,
+          "required": false,
+          "description": "تثبيت الهيدر أعلى الصفحة عند التمرير"
+        },
+        {
+          "type": "static",
+          "format": "line"
+        },
+        {
+          "type": "static",
+          "format": "title",
+          "id": "colors_section",
+          "value": "الألوان",
+          "variant": "h6"
+        },
+        {
+          "id": "bg_color",
+          "type": "string",
+          "format": "color",
+          "inputType": "color",
+          "label": "لون الخلفية",
+          "icon": "sicon-format-fill",
+          "value": "#ffffff",
+          "required": false
+        }
+      ]
     }
   ]
 }
