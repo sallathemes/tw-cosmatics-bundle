@@ -808,7 +808,7 @@
           "label": "العنوان الرئيسي",
           "placeholder": "أدخل العنوان الرئيسي...",
           "icon": "sicon-format-text-alt",
-          "value": "مميزات منتجنا الفريدة",
+          "value": "استمتعي ببشرة صحية وجميلة!",
           "multilanguage": true,
           "required": true,
           "minLength": 2,
@@ -821,7 +821,7 @@
           "label": "العنوان الفرعي",
           "placeholder": "أدخل العنوان الفرعي...",
           "icon": "sicon-format-text-alt",
-          "value": "اكتشف ما يميز منتجنا عن غيره",
+          "value": "اكتشفي قوة العناية الطبيعية مع مجموعتنا المميزة",
           "multilanguage": true,
           "required": false,
           "minLength": 0,
@@ -834,7 +834,7 @@
           "inputType": "color",
           "label": "لون الخلفية",
           "icon": "sicon-format-fill",
-          "value": "#ffffff",
+          "value": "#F2FAF3",
           "required": false
         },
         {
@@ -844,7 +844,7 @@
           "inputType": "color",
           "label": "لون النصوص",
           "icon": "sicon-format-fill",
-          "value": "#121212",
+          "value": "#222",
           "required": false
         },
         {
@@ -854,7 +854,7 @@
           "inputType": "color",
           "label": "لون العنوان",
           "icon": "sicon-format-fill",
-          "value": "#121212",
+          "value": "#222",
           "required": false
         },
         {
@@ -864,7 +864,7 @@
           "inputType": "color",
           "label": "لون العنوان الفرعي",
           "icon": "sicon-format-fill",
-          "value": "#666666",
+          "value": "#047857",
           "required": false
         },
         {
@@ -874,7 +874,7 @@
           "inputType": "color",
           "label": "لون الأيقونات",
           "icon": "sicon-format-fill",
-          "value": "#4f46e5",
+          "value": "#047857",
           "required": false
         },
         {
@@ -950,7 +950,7 @@
           "icon": "sicon-format-text-alt",
           "label": "أيقونة الميزة",
           "id": "feature1_icon",
-          "value": "sicon-full-wallet",
+          "value": "sicon-leaf",
           "required": false,
           "format": "icon",
           "description": null
@@ -962,7 +962,7 @@
           "label": "عنوان الميزة",
           "placeholder": "أدخل عنوان الميزة...",
           "icon": "sicon-format-text-alt",
-          "value": "ادفع للنشر",
+          "value": "تركيبة طبيعية",
           "multilanguage": true,
           "required": true,
           "minLength": 2,
@@ -975,7 +975,7 @@
           "label": "وصف الميزة",
           "placeholder": "أدخل وصف الميزة...",
           "icon": "sicon-format-text-alt",
-          "value": "هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال",
+          "value": "مكونات طبيعية عالية الجودة مُختارة بعناية لتغذية بشرتك وحمايتها من العوامل الخارجية",
           "multilanguage": true,
           "required": false,
           "minLength": 0,
@@ -998,7 +998,7 @@
           "icon": "sicon-format-text-alt",
           "label": "أيقونة الميزة",
           "id": "feature2_icon",
-          "value": "sicon-paper-plane-o",
+          "value": "sicon-chemistry",
           "required": false,
           "format": "icon",
           "description": null
@@ -1010,7 +1010,7 @@
           "label": "عنوان الميزة",
           "placeholder": "أدخل عنوان الميزة...",
           "icon": "sicon-format-text-alt",
-          "value": "SSL شهادات ال",
+          "value": "تقنية متقدمة",
           "multilanguage": true,
           "required": false,
           "minLength": 0,
@@ -1023,7 +1023,7 @@
           "label": "وصف الميزة",
           "placeholder": "أدخل وصف الميزة...",
           "icon": "sicon-format-text-alt",
-          "value": "أو مرجع شكلي لهذه الأحرف. خمسة قرون من الزمن لم تقضي على هذا النص، بل انه حتى صار",
+          "value": "تقنيات علمية حديثة تضمن امتصاص أفضل للمكونات الفعّالة وتعزز من نتائج العناية",
           "multilanguage": true,
           "required": false,
           "minLength": 0,
@@ -1046,7 +1046,7 @@
           "icon": "sicon-format-text-alt",
           "label": "أيقونة الميزة",
           "id": "feature3_icon",
-          "value": "sicon-free-sign",
+          "value": "sicon-medal",
           "required": false,
           "format": "icon",
           "description": null
@@ -1058,7 +1058,7 @@
           "label": "عنوان الميزة",
           "placeholder": "أدخل عنوان الميزة...",
           "icon": "sicon-format-text-alt",
-          "value": "خطوات بسيطة",
+          "value": "نتائج مضمونة",
           "multilanguage": true,
           "required": false,
           "minLength": 0,
@@ -1071,7 +1071,7 @@
           "label": "وصف الميزة",
           "placeholder": "أدخل وصف الميزة...",
           "icon": "sicon-format-text-alt",
-          "value": "عادة تكرار مقاطع من نص لوريم إيبسوم نفسه عدة مرات بما تتطلبه الحاجة، يقوم مولّدنا هذا باستخدام",
+          "value": "نتائج واضحة ومضمونة خلال أسابيع من الاستخدام المنتظم، لبشرة أكثر نعومة وإشراقاً",
           "multilanguage": true,
           "required": false,
           "minLength": 0,
@@ -1094,7 +1094,7 @@
           "icon": "sicon-format-text-alt",
           "label": "أيقونة الميزة",
           "id": "feature4_icon",
-          "value": "sicon-delivery-parcel2",
+          "value": "sicon-heart",
           "required": false,
           "format": "icon",
           "description": null
@@ -1106,7 +1106,7 @@
           "label": "عنوان الميزة",
           "placeholder": "أدخل عنوان الميزة...",
           "icon": "sicon-format-text-alt",
-          "value": "الأمن المتقدم",
+          "value": "مناسب لجميع الأنواع",
           "multilanguage": true,
           "required": false,
           "minLength": 0,
@@ -1119,7 +1119,7 @@
           "label": "وصف الميزة",
           "placeholder": "أدخل وصف الميزة...",
           "icon": "sicon-format-text-alt",
-          "value": "وبالتالي يكون النص الناتح خالي من التكرار، أو أي كلمات أو عبارات غير لائقة أو ما شابه. وهذا ما يجعله",
+          "value": "تركيبة لطيفة وآمنة تناسب جميع أنواع البشرة بما في ذلك البشرة الحساسة والمختلطة",
           "multilanguage": true,
           "required": false,
           "minLength": 0,
@@ -1707,7 +1707,7 @@
         {
           "type": "string",
           "icon": "sicon-image",
-          "value": "https://cdn.salla.network/images/themes/landing-page/default-avatar.png",
+          "value": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face&auto=format",
           "id": "testimonial1_avatar",
           "label": "صورة العميل",
           "format": "image",
@@ -1767,7 +1767,7 @@
         {
           "type": "string",
           "icon": "sicon-image",
-          "value": "https://cdn.salla.network/images/themes/landing-page/default-avatar.png",
+          "value": "https://images.unsplash.com/photo-1494790108755-2616b0234501?w=200&h=200&fit=crop&crop=face&auto=format",
           "id": "testimonial2_avatar",
           "label": "صورة العميل",
           "format": "image",
@@ -1827,7 +1827,7 @@
         {
           "type": "string",
           "icon": "sicon-image",
-          "value": "https://cdn.salla.network/images/themes/landing-page/default-avatar.png",
+          "value": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face&auto=format",
           "id": "testimonial3_avatar",
           "label": "صورة العميل",
           "format": "image",
@@ -1887,7 +1887,7 @@
         {
           "type": "string",
           "icon": "sicon-image",
-          "value": "",
+          "value": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face&auto=format",
           "id": "testimonial4_avatar",
           "label": "صورة العميل",
           "format": "image",
