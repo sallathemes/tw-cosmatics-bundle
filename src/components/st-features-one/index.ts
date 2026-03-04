@@ -13,8 +13,11 @@ export default class StFeaturesOne extends LitElement {
     subtitle_color: string;
     icon_color: string;
     main_image: string;
+    main_image_classes: string;
     float_image1: string;
     float_image2: string;
+    from_right: number;
+    from_bottom: number;
     reversed_image: boolean;
     feature1_icon: string;
     feature1_title: string;
@@ -94,12 +97,12 @@ export default class StFeaturesOne extends LitElement {
 
       .st-features-one__float-image {
         position: absolute;
-        top: 0;
-        transform: translateY(-20%);
+        top: 80px;
         width: 300px;
-        height: auto;
+        height: 300px;
         z-index: 0;
         display: none;
+        object-fit: cover;
       }
 
       @media (min-width: 768px) {
@@ -109,13 +112,12 @@ export default class StFeaturesOne extends LitElement {
       }
 
       .st-features-one__float-image--left {
-        left: -160px;
-        transform: translateX(-50%) translateY(-20%);
+        left: -10rem;
       }
 
       .st-features-one__float-image--right {
-        right: 0;
-        transform: translateX(50%) translateY(-20%);
+        right: -130px;
+        top: -13px;
       }
 
       .st-features-one__grid {
@@ -162,7 +164,8 @@ export default class StFeaturesOne extends LitElement {
         position: absolute;
         z-index: 0;
         width: 200px;
-        height: auto;
+        height: 200px;
+        object-fit: cover;
       }
 
       .st-features-one__content-col {
@@ -307,25 +310,27 @@ export default class StFeaturesOne extends LitElement {
         class="st-features-one s-block s-block--fullwidth"
         style="background-color: ${bgColor}; color: ${textColor};"
       >
-        ${this.config.float_image1 ? html`
-          <img
-            src="${this.config.float_image1}"
-            alt=""
-            class="st-features-one__float-image ${isReversed ? 'st-features-one__float-image--left' : 'st-features-one__float-image--right'}"
-            data-animate="fade-in"
-            data-delay="50"
-          />
-        ` : ''}
-
         <div class="container">
           <div class="st-features-one__grid">
             <div class="st-features-one__image-col ${isReversed ? 'st-features-one__image-col--reversed' : ''}">
+              ${this.config.float_image1 ? html`
+                <img
+                  src="${this.config.float_image1}"
+                  alt="decorative image"
+                  width="300"
+                  height="300"
+                  class="st-features-one__float-image ${isReversed ? 'st-features-one__float-image--left' : 'st-features-one__float-image--right'}"
+                  data-animate="fade-left"
+                  data-delay="300"
+                />
+              ` : ''}
+              
               ${this.config.main_image ? html`
                 <img
                   src="${this.config.main_image}"
-                  alt=""
-                  class="st-features-one__main-image"
-                  data-animate="scale-in"
+                  alt="product image"
+                  class="st-features-one__main-image ${this.config.main_image_classes || ''}"
+                  data-animate="zoom-in"
                   data-delay="100"
                 />
               ` : ''}
@@ -333,10 +338,12 @@ export default class StFeaturesOne extends LitElement {
               ${this.config.float_image2 ? html`
                 <img
                   src="${this.config.float_image2}"
-                  alt=""
+                  alt="decorative image"
+                  width="200"
+                  height="200"
                   class="st-features-one__float-image-2"
-                  style="bottom: -50px; right: 20px;"
-                  data-animate="zoom-in"
+                  style="right: ${this.config.from_right || 137}px; bottom: ${this.config.from_bottom || 5}px;"
+                  data-animate="fade-right"
                   data-delay="200"
                 />
               ` : ''}
