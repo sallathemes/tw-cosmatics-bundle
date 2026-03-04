@@ -278,54 +278,28 @@ export default class StFeaturesOne extends LitElement {
     document.head.appendChild(this.styleElement);
   }
 
-  private getDefaultConfig() {
-    return {
-      title: 'استمتعي ببشرة صحية وجميلة!',
-      subtitle: 'اكتشفي قوة العناية الطبيعية مع مجموعتنا المميزة',
-      bg_color: '#F2FAF3',
-      text_color: '#222',
-      title_color: '#222',
-      subtitle_color: '#047857',
-      icon_color: '#047857',
-      main_image: '/call-to-action/product.png',
-      float_image1: 'https://cdn.salla.sa/qQqDaW/corWzPQIML1pgyGvg3bfxUacKAHTV5ChGVuNBuuV.png',
-      float_image2: 'https://cdn.salla.sa/YgAgbp/caKu6acMSGlg6OeoWc5VepD7RUFuYDKgLRt26lG3.png',
-      reversed_image: false,
-      feature1_icon: 'sicon-leaf',
-      feature1_title: 'تركيبة طبيعية',
-      feature1_desc: 'مكونات طبيعية عالية الجودة مُختارة بعناية لتغذية بشرتك وحمايتها من العوامل الخارجية',
-      feature2_icon: 'sicon-chemistry',
-      feature2_title: 'تقنية متقدمة',
-      feature2_desc: 'تقنيات علمية حديثة تضمن امتصاص أفضل للمكونات الفعّالة وتعزز من نتائج العناية',
-      feature3_icon: 'sicon-medal',
-      feature3_title: 'نتائج مضمونة',
-      feature3_desc: 'نتائج واضحة ومضمونة خلال أسابيع من الاستخدام المنتظم، لبشرة أكثر نعومة وإشراقاً',
-      feature4_icon: 'sicon-heart',
-      feature4_title: 'مناسب لجميع الأنواع',
-      feature4_desc: 'تركيبة لطيفة وآمنة تناسب جميع أنواع البشرة بما في ذلك البشرة الحساسة والمختلطة',
-    };
-  }
-
   private getFeatures() {
-    const config = { ...this.getDefaultConfig(), ...this.config };
+    if (!this.config) return [];
 
     return [
-      { icon: config.feature1_icon, title: config.feature1_title, desc: config.feature1_desc },
-      { icon: config.feature2_icon, title: config.feature2_title, desc: config.feature2_desc },
-      { icon: config.feature3_icon, title: config.feature3_title, desc: config.feature3_desc },
-      { icon: config.feature4_icon, title: config.feature4_title, desc: config.feature4_desc },
+      { icon: this.config.feature1_icon, title: this.config.feature1_title, desc: this.config.feature1_desc },
+      { icon: this.config.feature2_icon, title: this.config.feature2_title, desc: this.config.feature2_desc },
+      { icon: this.config.feature3_icon, title: this.config.feature3_title, desc: this.config.feature3_desc },
+      { icon: this.config.feature4_icon, title: this.config.feature4_title, desc: this.config.feature4_desc },
     ].filter(f => f.title);
   }
 
   render() {
-    const config = { ...this.getDefaultConfig(), ...this.config };
+    if (!this.config) {
+      return html`<div>Configuration is required</div>`;
+    }
 
-    const bgColor = config.bg_color;
-    const textColor = config.text_color;
-    const titleColor = config.title_color;
-    const subtitleColor = config.subtitle_color;
-    const iconColor = config.icon_color;
-    const isReversed = config.reversed_image;
+    const bgColor = this.config.bg_color || '#ffffff';
+    const textColor = this.config.text_color || '#121212';
+    const titleColor = this.config.title_color || textColor;
+    const subtitleColor = this.config.subtitle_color || textColor;
+    const iconColor = this.config.icon_color || textColor;
+    const isReversed = this.config.reversed_image;
     const features = this.getFeatures();
 
     return html`
@@ -333,9 +307,9 @@ export default class StFeaturesOne extends LitElement {
         class="st-features-one s-block s-block--fullwidth"
         style="background-color: ${bgColor}; color: ${textColor};"
       >
-        ${config.float_image1 ? html`
+        ${this.config.float_image1 ? html`
           <img
-            src="${config.float_image1}"
+            src="${this.config.float_image1}"
             alt=""
             class="st-features-one__float-image ${isReversed ? 'st-features-one__float-image--left' : 'st-features-one__float-image--right'}"
             data-animate="fade-in"
@@ -346,9 +320,9 @@ export default class StFeaturesOne extends LitElement {
         <div class="container">
           <div class="st-features-one__grid">
             <div class="st-features-one__image-col ${isReversed ? 'st-features-one__image-col--reversed' : ''}">
-              ${config.main_image ? html`
+              ${this.config.main_image ? html`
                 <img
-                  src="${config.main_image}"
+                  src="${this.config.main_image}"
                   alt=""
                   class="st-features-one__main-image"
                   data-animate="scale-in"
@@ -356,9 +330,9 @@ export default class StFeaturesOne extends LitElement {
                 />
               ` : ''}
 
-              ${config.float_image2 ? html`
+              ${this.config.float_image2 ? html`
                 <img
-                  src="${config.float_image2}"
+                  src="${this.config.float_image2}"
                   alt=""
                   class="st-features-one__float-image-2"
                   style="bottom: -50px; right: 20px;"
@@ -375,13 +349,13 @@ export default class StFeaturesOne extends LitElement {
                   style="color: ${subtitleColor};"
                   data-animate="fade-up"
                   data-delay="0"
-                >${config.subtitle}</p>
+                >${this.config.subtitle}</p>
                 <h2 
                   class="st-features-one__title" 
                   style="color: ${titleColor};"
                   data-animate="fade-up"
                   data-delay="150"
-                >${config.title}</h2>
+                >${this.config.title}</h2>
               </div>
 
               <div class="st-features-one__features-grid">

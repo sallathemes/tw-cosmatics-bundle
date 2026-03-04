@@ -903,7 +903,7 @@
         {
           "type": "string",
           "icon": "sicon-image",
-          "value": "",
+          "value": "https://cdn.salla.sa/qQqDaW/corWzPQIML1pgyGvg3bfxUacKAHTV5ChGVuNBuuV.png",
           "id": "float_image1",
           "label": "صورة زخرفية ١",
           "format": "image",
@@ -914,7 +914,7 @@
         {
           "type": "string",
           "icon": "sicon-image",
-          "value": "",
+          "value": "https://cdn.salla.sa/YgAgbp/caKu6acMSGlg6OeoWc5VepD7RUFuYDKgLRt26lG3.png",
           "id": "float_image2",
           "label": "صورة زخرفية ٢",
           "format": "image",
