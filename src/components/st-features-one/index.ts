@@ -71,15 +71,34 @@ export default class StFeaturesOne extends LitElement {
         font-family: 'Baloo Bhaijaan 2', sans-serif;
       }
 
-      .st-features-one .container {
-        max-width: 1340px;
+      .container {
+        width: 100vw;
         margin: 0 auto;
-        padding: 0 1.5rem;
+        padding: 0 0.75rem;
+        max-width: 100%;
+      }
+j
+      @media (min-width: 640px) {
+        .container {
+          padding: 0 1rem;
+        }
       }
 
       @media (min-width: 768px) {
-        .st-features-one .container {
+        .container {
+          padding: 0 1.5rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .container {
           padding: 0 2rem;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .container {
+          width: 1340px;
         }
       }
 
@@ -98,26 +117,58 @@ export default class StFeaturesOne extends LitElement {
       .st-features-one__float-image {
         position: absolute;
         top: 80px;
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
         z-index: 0;
-        display: none;
+        display: block;
         object-fit: cover;
       }
 
       @media (min-width: 768px) {
         .st-features-one__float-image {
-          display: block;
+          width: 250px;
+          height: 250px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .st-features-one__float-image {
+          width: 300px;
+          height: 300px;
         }
       }
 
       .st-features-one__float-image--left {
-        left: -10rem;
+        left: -5rem;
+      }
+
+      @media (min-width: 768px) {
+        .st-features-one__float-image--left {
+          left: -8rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .st-features-one__float-image--left {
+          left: -10rem;
+        }
       }
 
       .st-features-one__float-image--right {
-        right: -130px;
+        right: -10px;
         top: -13px;
+      }
+
+      @media (min-width: 768px) {
+        .st-features-one__float-image--right {
+          right: -100px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .st-features-one__float-image--right {
+          right: -45px;
+        }
       }
 
       .st-features-one__grid {
@@ -133,14 +184,17 @@ export default class StFeaturesOne extends LitElement {
       }
 
       .st-features-one__image-col {
-        display: none;
+        display: block;
         position: relative;
-        grid-column: span 4;
+        grid-column: span 12;
+        margin-bottom: 2rem;
+        text-align: center;
       }
 
       @media (min-width: 768px) {
         .st-features-one__image-col {
-          display: block;
+          grid-column: span 4;
+          margin-bottom: 0;
         }
       }
 
@@ -168,6 +222,13 @@ export default class StFeaturesOne extends LitElement {
         object-fit: cover;
       }
 
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .st-features-one__float-image-2 {
+          right: 60px !important;
+          bottom: 150px !important;
+        }
+      }
+
       .st-features-one__content-col {
         grid-column: span 8;
         padding: 0 1.5rem;
@@ -181,26 +242,40 @@ export default class StFeaturesOne extends LitElement {
 
       .st-features-one__header {
         margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .st-features-one__header {
+          text-align: right;
+        }
       }
 
       .st-features-one__title {
-        font-size: 1.25rem;
+        font-size: 1.75rem;
         font-weight: 700;
         margin: 0 0 0.5rem 0;
-        line-height: 32px;
+        line-height: 1.3;
         max-width: 48rem;
       }
 
       @media (min-width: 640px) {
         .st-features-one__title {
-          font-size: 1.875rem;
+          font-size: 2rem;
+          line-height: 1.2;
         }
       }
 
       @media (min-width: 768px) {
         .st-features-one__title {
+          font-size: 2.5rem;
+          line-height: 1.4;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .st-features-one__title {
           font-size: 3rem;
-          line-height: 78px;
         }
       }
 
@@ -209,9 +284,16 @@ export default class StFeaturesOne extends LitElement {
       }
 
       .st-features-one__subtitle {
-        font-size: 1rem;
+        font-size: 14px;
         margin: 0;
         opacity: 0.8;
+        line-height: 1.6;
+      }
+
+      @media (min-width: 768px) {
+        .st-features-one__subtitle {
+          font-size: 1.25rem;
+        }
       }
 
       .st-features-one__features-grid {
@@ -265,17 +347,35 @@ export default class StFeaturesOne extends LitElement {
       }
 
       .st-features-one__feature-title {
-        font-size: 1rem;
+        font-size: 1.125rem;
         font-weight: 600;
-        line-height: 1.75;
+        line-height: 1.5;
         margin: 0;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      @media (min-width: 768px) {
+        .st-features-one__feature-title {
+          font-size: 1rem;
+        }
       }
 
       .st-features-one__feature-desc {
-        margin: 0.5rem 0 0 0;
-        font-size: 0.9375rem;
-        line-height: 1.75rem;
+        margin: 0.75rem 0 0 0;
+        font-size: 1rem;
+        line-height: 1.6;
         opacity: 0.7;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+      }
+
+      @media (min-width: 768px) {
+        .st-features-one__feature-desc {
+          font-size: 1rem;
+          line-height: 1.7;
+        }
       }
     `;
     document.head.appendChild(this.styleElement);
@@ -342,7 +442,7 @@ export default class StFeaturesOne extends LitElement {
                   width="200"
                   height="200"
                   class="st-features-one__float-image-2"
-                  style="right: ${this.config.from_right || 137}px; bottom: ${this.config.from_bottom || 5}px;"
+                  style="right: ${this.config.from_right || 150}px; bottom: ${this.config.from_bottom || 20}px;"
                   data-animate="fade-right"
                   data-delay="200"
                 />
