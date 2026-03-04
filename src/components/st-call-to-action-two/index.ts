@@ -1,5 +1,6 @@
 import { html, LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
+import AOS from "../../utils/animate-on-scroll";
 
 declare global {
   interface Window {
@@ -37,11 +38,17 @@ export default class StCallToActionTwo extends LitElement {
     super.connectedCallback();
     this.injectStyles();
     this.product = window.product;
+    AOS.init();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.styleElement?.remove();
+  }
+
+  updated(changedProperties: any) {
+    super.updated(changedProperties);
+    AOS.refresh();
   }
 
   injectStyles() {
@@ -210,7 +217,11 @@ export default class StCallToActionTwo extends LitElement {
       >
         <div class="container">
           <div class="st-call-to-action-two__wrapper">
-            <div class="st-call-to-action-two__image-col">
+            <div 
+              class="st-call-to-action-two__image-col"
+              data-animate="fade-left"
+              data-delay="0"
+            >
               ${this.config.image ? html`
                 <img
                   src="${this.config.image}"
@@ -219,7 +230,11 @@ export default class StCallToActionTwo extends LitElement {
                 />
               ` : ''}
             </div>
-            <div class="st-call-to-action-two__product-col">
+            <div 
+              class="st-call-to-action-two__product-col"
+              data-animate="fade-right"
+              data-delay="150"
+            >
               ${this.renderProductCard()}
             </div>
           </div>

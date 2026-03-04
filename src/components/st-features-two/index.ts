@@ -1,5 +1,6 @@
 import { html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
+import AOS from "../../utils/animate-on-scroll";
 
 export default class StFeaturesTwo extends LitElement {
   @property({ type: Object })
@@ -27,11 +28,17 @@ export default class StFeaturesTwo extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.injectStyles();
+    AOS.init();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.styleElement?.remove();
+  }
+
+  updated(changedProperties: any) {
+    super.updated(changedProperties);
+    AOS.refresh();
   }
 
   injectStyles() {
@@ -133,14 +140,14 @@ export default class StFeaturesTwo extends LitElement {
         style="background-color: ${bgColor}; color: ${textColor};"
       >
         <div class="st-features-two__header">
-          <h2 class="st-features-two__title" style="color: ${titleColor};">${this.config.title}</h2>
-          <p class="st-features-two__subtitle" style="color: ${subtitleColor};">${this.config.subtitle}</p>
+          <h2 class="st-features-two__title" style="color: ${titleColor};" data-animate="fade-up" data-delay="0">${this.config.title}</h2>
+          <p class="st-features-two__subtitle" style="color: ${subtitleColor};" data-animate="fade-up" data-delay="150">${this.config.subtitle}</p>
         </div>
 
         <div class="container">
           <div class="st-features-two__grid">
-            ${features.map(feature => html`
-              <div class="st-features-two__feature">
+            ${features.map((feature, index) => html`
+              <div class="st-features-two__feature" data-animate="fade-up" data-delay="${300 + (index * 100)}">
                 ${feature.image ? html`
                   <img
                     src="${feature.image}"
@@ -148,6 +155,8 @@ export default class StFeaturesTwo extends LitElement {
                     class="st-features-two__feature-image"
                     width="280"
                     height="280"
+                    data-animate="scale-in"
+                    data-delay="${350 + (index * 100)}"
                   />
                 ` : ''}
                 <p class="st-features-two__feature-desc">${feature.desc}</p>

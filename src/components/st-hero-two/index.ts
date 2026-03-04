@@ -1,5 +1,6 @@
 import { html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
+import AOS from "../../utils/animate-on-scroll";
 
 export default class StHeroTwo extends LitElement {
   @property({ type: Object })
@@ -23,11 +24,17 @@ export default class StHeroTwo extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.injectStyles();
+    AOS.init();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.styleElement?.remove();
+  }
+
+  updated(changedProperties: any) {
+    super.updated(changedProperties);
+    AOS.refresh();
   }
 
   injectStyles() {
@@ -229,6 +236,8 @@ export default class StHeroTwo extends LitElement {
                 class="st-hero-two__shape st-hero-two__shape--top"
                 width="200"
                 height="200"
+                data-animate="fade-left"
+                data-delay="300"
               />
             ` : ''}
 
@@ -239,6 +248,8 @@ export default class StHeroTwo extends LitElement {
                 class="st-hero-two__shape st-hero-two__shape--bottom"
                 width="200"
                 height="200"
+                data-animate="fade-right"
+                data-delay="400"
               />
             ` : ''}
           </div>
@@ -248,9 +259,9 @@ export default class StHeroTwo extends LitElement {
 
         <div class="st-hero-two__content-container container">
           <div class="st-hero-two__content">
-            <p class="st-hero-two__subtitle">${this.config.subtitle}</p>
-            <h2 class="st-hero-two__title">${this.config.title}</h2>
-            <salla-add-product-button width="wide"></salla-add-product-button>
+            <p class="st-hero-two__subtitle" data-animate="fade-up" data-delay="0">${this.config.subtitle}</p>
+            <h2 class="st-hero-two__title" data-animate="fade-up" data-delay="150">${this.config.title}</h2>
+            <salla-add-product-button width="wide" data-animate="fade-up" data-delay="300"></salla-add-product-button>
           </div>
 
           <div class="st-hero-two__content-spacer"></div>

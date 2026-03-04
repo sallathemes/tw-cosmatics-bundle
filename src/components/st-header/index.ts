@@ -1,5 +1,6 @@
 import { html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
+import AOS from "../../utils/animate-on-scroll";
 
 export default class StHeader extends LitElement {
   @property({ type: Object })
@@ -18,11 +19,17 @@ export default class StHeader extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.injectStyles();
+    AOS.init();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.styleElement?.remove();
+  }
+
+  updated(changedProperties: any) {
+    super.updated(changedProperties);
+    AOS.refresh();
   }
 
   injectStyles() {
@@ -80,9 +87,11 @@ export default class StHeader extends LitElement {
                 src="${this.config.logo}"
                 alt="Logo"
                 class="st-header__logo"
+                data-animate="fade-down"
+                data-delay="0"
               />
             ` : html`
-              <salla-store-logo></salla-store-logo>
+              <salla-store-logo data-animate="fade-down" data-delay="0"></salla-store-logo>
             `}
           </div>
         </div>

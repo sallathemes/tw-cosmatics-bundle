@@ -33,6 +33,13 @@ function litImportMapPlugin(): Plugin {
 }
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'src/main.ts',
+      },
+    },
+  },
   plugins: [
     litImportMapPlugin(),
     sallaTransformPlugin(),

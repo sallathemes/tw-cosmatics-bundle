@@ -1,5 +1,6 @@
 import { html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
+import AOS from "../../utils/animate-on-scroll";
 
 export default class StHeroAreaOne extends LitElement {
   @property({ type: Object })
@@ -28,12 +29,18 @@ export default class StHeroAreaOne extends LitElement {
     this.handleMouseMove = this.handleMouseMove.bind(this);
     window.addEventListener('mousemove', this.handleMouseMove);
     this.injectStyles();
+    AOS.init();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     window.removeEventListener('mousemove', this.handleMouseMove);
     this.styleElement?.remove();
+  }
+
+  updated(changedProperties: any) {
+    super.updated(changedProperties);
+    AOS.refresh();
   }
 
   injectStyles() {
@@ -217,9 +224,26 @@ export default class StHeroAreaOne extends LitElement {
       >
         <div class="st-hero-area-one__container">
           <div class="st-hero-area-one__content">
-            <h2 class="st-hero-area-one__title">${this.config.main_title}</h2>
-            <p class="st-hero-area-one__description">${this.config.description}</p>
-            <div class="st-hero-area-one__button-wrap">
+            <h2 
+              class="st-hero-area-one__title" 
+              data-animate="fade-up"
+              data-delay="0"
+            >
+              ${this.config.main_title}
+              
+            </h2>
+            <p 
+              class="st-hero-area-one__description" 
+              data-animate="fade-up"
+              data-delay="150"
+            >
+              ${this.config.description}
+            </p>
+            <div 
+              class="st-hero-area-one__button-wrap"
+              data-animate="fade-up"
+              data-delay="300"
+            >
               <salla-add-product-button width="wide"></salla-add-product-button>
             </div>
           </div>
@@ -231,6 +255,8 @@ export default class StHeroAreaOne extends LitElement {
                   src="${this.config.image}"
                   alt=""
                   class="st-hero-area-one__main-image"
+                  data-animate="scale-in"
+                  data-delay="100"
                 />
               ` : ''}
 
@@ -239,6 +265,8 @@ export default class StHeroAreaOne extends LitElement {
                   src="${this.config.image1}"
                   alt=""
                   class="st-hero-area-one__parallax-image st-hero-area-one__parallax-image--1"
+                  data-animate="zoom-in"
+                  data-delay="200"
                 />
               ` : ''}
 
@@ -247,6 +275,8 @@ export default class StHeroAreaOne extends LitElement {
                   src="${this.config.image2}"
                   alt=""
                   class="st-hero-area-one__parallax-image st-hero-area-one__parallax-image--2"
+                  data-animate="zoom-in"
+                  data-delay="300"
                 />
               ` : ''}
 
@@ -255,6 +285,8 @@ export default class StHeroAreaOne extends LitElement {
                   src="${this.config.image3}"
                   alt=""
                   class="st-hero-area-one__parallax-image st-hero-area-one__parallax-image--3"
+                  data-animate="zoom-in"
+                  data-delay="400"
                 />
               ` : ''}
             </div>

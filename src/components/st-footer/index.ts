@@ -1,5 +1,6 @@
 import { html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
+import AOS from "../../utils/animate-on-scroll";
 
 export default class StFooter extends LitElement {
   @property({ type: Object })
@@ -45,11 +46,17 @@ export default class StFooter extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.injectStyles();
+    AOS.init();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.styleElement?.remove();
+  }
+
+  updated(changedProperties: any) {
+    super.updated(changedProperties);
+    AOS.refresh();
   }
 
   injectStyles() {
@@ -248,25 +255,27 @@ export default class StFooter extends LitElement {
                 src="${this.config.logo}"
                 alt="Logo"
                 class="st-footer__logo"
+                data-animate="fade-up"
+                data-delay="0"
               />
             ` : ''}
 
             ${this.config.description ? html`
-              <p class="st-footer__description">${this.config.description}</p>
+              <p class="st-footer__description" data-animate="fade-up" data-delay="150">${this.config.description}</p>
             ` : ''}
 
             ${navLinks.length > 0 ? html`
-              <nav class="st-footer__nav">
-                ${navLinks.map(link => html`
-                  <a href="${link.url || '#'}" class="st-footer__nav-link">${link.text}</a>
+              <nav class="st-footer__nav" data-animate="fade-up" data-delay="300">
+                ${navLinks.map((link, index) => html`
+                  <a href="${link.url || '#'}" class="st-footer__nav-link" data-animate="fade-up" data-delay="${350 + (index * 50)}">${link.text}</a>
                 `)}
               </nav>
             ` : ''}
 
             ${socialLinks.length > 0 ? html`
-              <div class="st-footer__social">
-                ${socialLinks.map(link => html`
-                  <a href="${link.url}" target="_blank" rel="noopener" class="st-footer__social-link">
+              <div class="st-footer__social" data-animate="fade-up" data-delay="500">
+                ${socialLinks.map((link, index) => html`
+                  <a href="${link.url}" target="_blank" rel="noopener" class="st-footer__social-link" data-animate="scale-in" data-delay="${550 + (index * 50)}">
                     <i class="${link.icon}"></i>
                   </a>
                 `)}
@@ -275,16 +284,18 @@ export default class StFooter extends LitElement {
           </div>
 
           ${metaItems.length > 0 ? html`
-            <div class="st-footer__meta">
-              ${metaItems.map(item => html`
+            <div class="st-footer__meta" data-animate="fade-up" data-delay="600">
+              ${metaItems.map((item, index) => html`
                 <a
                   href="${item.url || '#'}"
                   target="${item.url ? '_blank' : '_self'}"
                   rel="noopener"
                   class="st-footer__meta-item"
+                  data-animate="fade-${index === 0 ? 'left' : 'right'}"
+                  data-delay="${650 + (index * 100)}"
                 >
                   ${item.image ? html`
-                    <img src="${item.image}" alt="${item.title}" class="st-footer__meta-image" />
+                    <img src="${item.image}" alt="${item.title}" class="st-footer__meta-image" data-animate="scale-in" data-delay="${700 + (index * 100)}" />
                   ` : ''}
                   <div class="st-footer__meta-text">
                     ${item.subtitle ? html`<p class="st-footer__meta-subtitle">${item.subtitle}</p>` : ''}
@@ -299,8 +310,8 @@ export default class StFooter extends LitElement {
         <div class="st-footer__bottom">
           <div class="container">
             <div class="st-footer__bottom-inner">
-              <span>${this.config.copyright_text || '© جميع الحقوق محفوظة'}</span>
-              <span>${this.config.powered_by_text || 'صنع بإتقان على منصة سلة'}</span>
+              <span data-animate="fade-right" data-delay="800">${this.config.copyright_text || '© جميع الحقوق محفوظة'}</span>
+              <span data-animate="fade-left" data-delay="850">${this.config.powered_by_text || 'صنع بإتقان على منصة سلة'}</span>
             </div>
           </div>
         </div>

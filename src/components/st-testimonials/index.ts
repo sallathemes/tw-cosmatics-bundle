@@ -1,5 +1,6 @@
 import { html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
+import AOS from "../../utils/animate-on-scroll";
 
 export default class StTestimonials extends LitElement {
   @property({ type: Object })
@@ -36,11 +37,17 @@ export default class StTestimonials extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.injectStyles();
+    AOS.init();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.styleElement?.remove();
+  }
+
+  updated(changedProperties: any) {
+    super.updated(changedProperties);
+    AOS.refresh();
   }
 
   injectStyles() {
@@ -207,26 +214,28 @@ export default class StTestimonials extends LitElement {
       >
         <div class="container">
           <div class="st-testimonials__header">
-            <h2 class="st-testimonials__title">${this.config.title}</h2>
-            <p class="st-testimonials__subtitle">${this.config.subtitle}</p>
+            <h2 class="st-testimonials__title" data-animate="fade-up" data-delay="0">${this.config.title}</h2>
+            <p class="st-testimonials__subtitle" data-animate="fade-up" data-delay="150">${this.config.subtitle}</p>
           </div>
 
           <div class="st-testimonials__grid">
-            ${testimonials.map(item => html`
-              <div class="st-testimonials__item">
+            ${testimonials.map((item, index) => html`
+              <div class="st-testimonials__item" data-animate="fade-up" data-delay="${300 + (index * 100)}">
                 ${item.avatar ? html`
                   <img
                     src="${item.avatar}"
                     alt="${item.name}"
                     class="st-testimonials__avatar"
+                    data-animate="scale-in"
+                    data-delay="${350 + (index * 100)}"
                   />
                 ` : ''}
                 <div class="st-testimonials__content">
-                  <div class="st-testimonials__rating">
+                  <div class="st-testimonials__rating" data-animate="fade-up" data-delay="${400 + (index * 100)}">
                     <salla-rating-stars value="${item.rating}"></salla-rating-stars>
                   </div>
-                  <p class="st-testimonials__text">${item.content}</p>
-                  <h4 class="st-testimonials__name">${item.name}</h4>
+                  <p class="st-testimonials__text" data-animate="fade-up" data-delay="${450 + (index * 100)}">${item.content}</p>
+                  <h4 class="st-testimonials__name" data-animate="fade-up" data-delay="${500 + (index * 100)}">${item.name}</h4>
                 </div>
               </div>
             `)}

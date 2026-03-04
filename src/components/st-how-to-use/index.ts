@@ -1,5 +1,6 @@
 import { html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
+import AOS from "../../utils/animate-on-scroll";
 
 interface Step {
   title: string;
@@ -47,11 +48,17 @@ export default class StHowToUse extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.injectStyles();
+    AOS.init();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.styleElement?.remove();
+  }
+
+  updated(changedProperties: any) {
+    super.updated(changedProperties);
+    AOS.refresh();
   }
 
   injectStyles() {
@@ -218,10 +225,10 @@ export default class StHowToUse extends LitElement {
 
   private renderStep(step: Step, index: number) {
     return html`
-      <div class="st-how-to-use__step">
+      <div class="st-how-to-use__step" data-animate="fade-up" data-delay="${300 + (index * 100)}">
         <div class="st-how-to-use__step-header">
-          <strong class="st-how-to-use__step-number">${index + 1}</strong>
-          <svg class="st-how-to-use__step-line" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <strong class="st-how-to-use__step-number" data-animate="scale-in" data-delay="${350 + (index * 100)}">${index + 1}</strong>
+          <svg class="st-how-to-use__step-line" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg" data-animate="fade-right" data-delay="${400 + (index * 100)}">
             <line x1="0" y1="10" x2="200" y2="10" stroke="currentColor" stroke-width="2" stroke-dasharray="8 4"/>
           </svg>
         </div>
@@ -230,8 +237,8 @@ export default class StHowToUse extends LitElement {
           <p class="st-how-to-use__step-desc">${step.desc}</p>
           ${step.list.length > 0 ? html`
             <ul class="st-how-to-use__step-list">
-              ${step.list.map(item => html`
-                <li class="st-how-to-use__step-list-item">
+              ${step.list.map((item, itemIndex) => html`
+                <li class="st-how-to-use__step-list-item" data-animate="fade-up" data-delay="${450 + (index * 100) + (itemIndex * 50)}">
                   ${this.renderCheckIcon()}
                   <span>${item}</span>
                 </li>
@@ -259,8 +266,8 @@ export default class StHowToUse extends LitElement {
         style="background-color: ${bgColor}; color: ${textColor};"
       >
         <div class="st-how-to-use__header">
-          <h2 class="st-how-to-use__title">${this.config.title}</h2>
-          <p class="st-how-to-use__subtitle" style="color: ${subtitleColor};">${this.config.subtitle}</p>
+          <h2 class="st-how-to-use__title" data-animate="fade-up" data-delay="0">${this.config.title}</h2>
+          <p class="st-how-to-use__subtitle" style="color: ${subtitleColor};" data-animate="fade-up" data-delay="150">${this.config.subtitle}</p>
         </div>
 
         <div class="container">

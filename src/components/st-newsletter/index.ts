@@ -1,5 +1,6 @@
 import { html, LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
+import AOS from "../../utils/animate-on-scroll";
 
 export default class StNewsletter extends LitElement {
   @property({ type: Object })
@@ -29,11 +30,17 @@ export default class StNewsletter extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.injectStyles();
+    AOS.init();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.styleElement?.remove();
+  }
+
+  updated(changedProperties: any) {
+    super.updated(changedProperties);
+    AOS.refresh();
   }
 
   injectStyles() {
@@ -207,11 +214,11 @@ export default class StNewsletter extends LitElement {
         style="background-color: ${bgColor}; color: ${textColor};"
       >
         <div class="st-newsletter__content">
-          <h3 class="st-newsletter__title">${this.config.title || 'النشرة الإخبارية'}</h3>
-          <p class="st-newsletter__subtitle">${this.config.subtitle || 'كن أول من يعرف عن الخصومات والعروض والأحداث'}</p>
+          <h3 class="st-newsletter__title" data-animate="fade-right" data-delay="0">${this.config.title || 'النشرة الإخبارية'}</h3>
+          <p class="st-newsletter__subtitle" data-animate="fade-right" data-delay="150">${this.config.subtitle || 'كن أول من يعرف عن الخصومات والعروض والأحداث'}</p>
         </div>
 
-        <form class="st-newsletter__form" @submit="${this.handleSubmit}">
+        <form class="st-newsletter__form" @submit="${this.handleSubmit}" data-animate="fade-left" data-delay="300">
           <div class="st-newsletter__input-wrap">
             <input
               type="email"
@@ -220,12 +227,16 @@ export default class StNewsletter extends LitElement {
               .value="${this.email}"
               @input="${this.handleInput}"
               required
+              data-animate="fade-up"
+              data-delay="350"
             />
             <button
               type="submit"
               class="st-newsletter__button"
               style="background-color: ${buttonBgColor}; color: ${buttonTextColor};"
               ?disabled="${this.isSubmitting}"
+              data-animate="scale-in"
+              data-delay="400"
             >
               ${this.isSubmitting ? '...' : (this.config.button_text || 'اشترك الآن')}
             </button>

@@ -1,5 +1,6 @@
 import { html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
+import AOS from "../../utils/animate-on-scroll";
 
 export default class StFaqs extends LitElement {
   @property({ type: Object })
@@ -31,11 +32,17 @@ export default class StFaqs extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.injectStyles();
+    AOS.init();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.styleElement?.remove();
+  }
+
+  updated(changedProperties: any) {
+    super.updated(changedProperties);
+    AOS.refresh();
   }
 
   injectStyles() {
@@ -271,11 +278,23 @@ export default class StFaqs extends LitElement {
         <div class="container">
           <div class="st-faqs__grid">
             <div class="st-faqs__content">
-              <p class="st-faqs__subtitle">${this.config.sub_title}</p>
-              <h2 class="st-faqs__title">${this.config.title}</h2>
+              <p 
+                class="st-faqs__subtitle"
+                data-animate="fade-up"
+                data-delay="0"
+              >${this.config.sub_title}</p>
+              <h2 
+                class="st-faqs__title"
+                data-animate="fade-up"
+                data-delay="150"
+              >${this.config.title}</h2>
 
               ${faqs.map((faq, index) => html`
-                <div class="st-faqs__item">
+                <div 
+                  class="st-faqs__item"
+                  data-animate="fade-up"
+                  data-delay="${300 + (index * 100)}"
+                >
                   <input type="checkbox" id="faq-${this.instanceId}-${index}" name="faqs-${this.instanceId}" />
                   <div class="st-faqs__item-inner">
                     <label for="faq-${this.instanceId}-${index}" class="st-faqs__question">
@@ -292,7 +311,11 @@ export default class StFaqs extends LitElement {
               `)}
             </div>
 
-            <div class="st-faqs__image-col">
+            <div 
+              class="st-faqs__image-col"
+              data-animate="fade-left"
+              data-delay="200"
+            >
               ${this.config.image ? html`
                 <img
                   src="${this.config.image}"

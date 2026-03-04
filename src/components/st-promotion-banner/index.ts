@@ -1,5 +1,6 @@
 import { html, LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
+import AOS from "../../utils/animate-on-scroll";
 
 export default class StPromotionBanner extends LitElement {
   @property({ type: Object })
@@ -32,6 +33,7 @@ export default class StPromotionBanner extends LitElement {
     super.connectedCallback();
     this.injectStyles();
     this.startCountdown();
+    AOS.init();
   }
 
   disconnectedCallback() {
@@ -40,6 +42,11 @@ export default class StPromotionBanner extends LitElement {
     if (this.countdownInterval) {
       clearInterval(this.countdownInterval);
     }
+  }
+
+  updated(changedProperties: any) {
+    super.updated(changedProperties);
+    AOS.refresh();
   }
 
   injectStyles() {
@@ -245,43 +252,43 @@ export default class StPromotionBanner extends LitElement {
           <div class="st-promotion-banner__content-wrap">
             <!-- Part 1 -->
             ${this.config.part1_title ? html`
-              <div class="st-promotion-banner__part">
-                <i class="st-promotion-banner__icon st-promotion-banner__icon--spinning ${this.config.part1_icon}"></i>
+              <div class="st-promotion-banner__part" data-animate="fade-left" data-delay="0">
+                <i class="st-promotion-banner__icon st-promotion-banner__icon--spinning ${this.config.part1_icon}" data-animate="scale-in" data-delay="100"></i>
                 <div class="st-promotion-banner__text">
-                  <h2 class="st-promotion-banner__title">${this.config.part1_title}</h2>
-                  <p class="st-promotion-banner__subtitle">${this.config.part1_subtitle}</p>
+                  <h2 class="st-promotion-banner__title" data-animate="fade-up" data-delay="150">${this.config.part1_title}</h2>
+                  <p class="st-promotion-banner__subtitle" data-animate="fade-up" data-delay="200">${this.config.part1_subtitle}</p>
                 </div>
               </div>
             ` : ''}
 
             <!-- Part 2 -->
             ${this.config.part2_title ? html`
-              <div class="st-promotion-banner__part">
-                <i class="st-promotion-banner__icon ${this.config.part2_icon}"></i>
+              <div class="st-promotion-banner__part" data-animate="fade-right" data-delay="250">
+                <i class="st-promotion-banner__icon ${this.config.part2_icon}" data-animate="scale-in" data-delay="350"></i>
                 <div class="st-promotion-banner__text">
-                  <h2 class="st-promotion-banner__title">${this.config.part2_title}</h2>
-                  <p class="st-promotion-banner__subtitle">${this.config.part2_subtitle}</p>
+                  <h2 class="st-promotion-banner__title" data-animate="fade-up" data-delay="400">${this.config.part2_title}</h2>
+                  <p class="st-promotion-banner__subtitle" data-animate="fade-up" data-delay="450">${this.config.part2_subtitle}</p>
                 </div>
               </div>
             ` : ''}
 
             <!-- Countdown -->
-            <div class="st-promotion-banner__countdown-wrap">
+            <div class="st-promotion-banner__countdown-wrap" data-animate="fade-up" data-delay="300">
               <div class="st-promotion-banner__countdown">
-                <span class="st-promotion-banner__countdown-block">${this.formatNumber(this.countdown.seconds)}</span>
+                <span class="st-promotion-banner__countdown-block" data-animate="zoom-in" data-delay="500">${this.formatNumber(this.countdown.seconds)}</span>
                 <span class="st-promotion-banner__countdown-separator">:</span>
-                <span class="st-promotion-banner__countdown-block">${this.formatNumber(this.countdown.minutes)}</span>
+                <span class="st-promotion-banner__countdown-block" data-animate="zoom-in" data-delay="550">${this.formatNumber(this.countdown.minutes)}</span>
                 <span class="st-promotion-banner__countdown-separator">:</span>
-                <span class="st-promotion-banner__countdown-block">${this.formatNumber(this.countdown.hours)}</span>
+                <span class="st-promotion-banner__countdown-block" data-animate="zoom-in" data-delay="600">${this.formatNumber(this.countdown.hours)}</span>
                 <span class="st-promotion-banner__countdown-separator">:</span>
-                <span class="st-promotion-banner__countdown-block">${this.formatNumber(this.countdown.days)}</span>
+                <span class="st-promotion-banner__countdown-block" data-animate="zoom-in" data-delay="650">${this.formatNumber(this.countdown.days)}</span>
               </div>
             </div>
           </div>
 
           <!-- Banner Button -->
           ${this.config.banner_btn_text ? html`
-            <div class="st-promotion-banner__btn">
+            <div class="st-promotion-banner__btn" data-animate="bounce-in" data-delay="700">
               <button>${this.config.banner_btn_text}</button>
             </div>
           ` : ''}

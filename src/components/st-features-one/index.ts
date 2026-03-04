@@ -1,5 +1,6 @@
 import { html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
+import AOS from "../../utils/animate-on-scroll";
 
 export default class StFeaturesOne extends LitElement {
   @property({ type: Object })
@@ -38,6 +39,14 @@ export default class StFeaturesOne extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.injectStyles();
+    // Ensure animation system is initialized
+    AOS.init();
+  }
+
+  updated(changedProperties: any) {
+    super.updated(changedProperties);
+    // Refresh animation system to observe new elements
+    AOS.refresh();
   }
 
   disconnectedCallback() {
@@ -278,6 +287,8 @@ export default class StFeaturesOne extends LitElement {
             src="${this.config.float_image1}"
             alt=""
             class="st-features-one__float-image ${isReversed ? 'st-features-one__float-image--left' : 'st-features-one__float-image--right'}"
+            data-animate="fade-in"
+            data-delay="50"
           />
         ` : ''}
 
@@ -289,6 +300,8 @@ export default class StFeaturesOne extends LitElement {
                   src="${this.config.main_image}"
                   alt=""
                   class="st-features-one__main-image"
+                  data-animate="scale-in"
+                  data-delay="100"
                 />
               ` : ''}
 
@@ -298,19 +311,35 @@ export default class StFeaturesOne extends LitElement {
                   alt=""
                   class="st-features-one__float-image-2"
                   style="bottom: -50px; right: 20px;"
+                  data-animate="zoom-in"
+                  data-delay="200"
                 />
               ` : ''}
             </div>
 
             <div class="st-features-one__content-col">
               <div class="st-features-one__header">
-                <h2 class="st-features-one__title" style="color: ${titleColor};">${this.config.title}</h2>
-                <p class="st-features-one__subtitle" style="color: ${subtitleColor};">${this.config.subtitle}</p>
+                <h2 
+                  class="st-features-one__title" 
+                  style="color: ${titleColor};"
+                  data-animate="fade-up"
+                  data-delay="0"
+                >${this.config.title}</h2>
+                <p 
+                  class="st-features-one__subtitle" 
+                  style="color: ${subtitleColor};"
+                  data-animate="fade-up"
+                  data-delay="150"
+                >${this.config.subtitle}</p>
               </div>
 
               <div class="st-features-one__features-grid">
-                ${features.map(feature => html`
-                  <div class="st-features-one__feature">
+                ${features.map((feature, index) => html`
+                  <div 
+                    class="st-features-one__feature"
+                    data-animate="fade-up"
+                    data-delay="${300 + (index * 150)}"
+                  >
                     <div class="st-features-one__feature-icon-wrap">
                       <i class="st-features-one__feature-icon ${feature.icon}" style="color: ${iconColor};"></i>
                     </div>
