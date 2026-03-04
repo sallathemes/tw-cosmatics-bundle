@@ -950,7 +950,7 @@
           "icon": "sicon-format-text-alt",
           "label": "أيقونة الميزة",
           "id": "feature1_icon",
-          "value": "sicon-leaf",
+          "value": "sicon-feather-pen",
           "required": false,
           "format": "icon",
           "description": null
@@ -998,7 +998,7 @@
           "icon": "sicon-format-text-alt",
           "label": "أيقونة الميزة",
           "id": "feature2_icon",
-          "value": "sicon-chemistry",
+          "value": "sicon-fingerprint",
           "required": false,
           "format": "icon",
           "description": null
