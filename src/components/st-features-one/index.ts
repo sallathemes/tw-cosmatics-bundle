@@ -65,6 +65,19 @@ export default class StFeaturesOne extends LitElement {
         position: relative;
         padding: 4rem 0 4rem;
         overflow: visible;
+        font-family: 'Baloo Bhaijaan 2', sans-serif;
+      }
+
+      .st-features-one .container {
+        max-width: 1340px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .st-features-one .container {
+          padding: 0 2rem;
+        }
       }
 
       @media (min-width: 768px) {
@@ -168,16 +181,28 @@ export default class StFeaturesOne extends LitElement {
       }
 
       .st-features-one__title {
-        font-size: 1.75rem;
+        font-size: 1.25rem;
         font-weight: 700;
         margin: 0 0 0.5rem 0;
-        line-height: 1.3;
+        line-height: 32px;
+        max-width: 48rem;
+      }
+
+      @media (min-width: 640px) {
+        .st-features-one__title {
+          font-size: 1.875rem;
+        }
       }
 
       @media (min-width: 768px) {
         .st-features-one__title {
-          font-size: 2rem;
+          font-size: 3rem;
+          line-height: 78px;
         }
+      }
+
+      .dark .st-features-one__title {
+        color: #f9fafb !important;
       }
 
       .st-features-one__subtitle {
@@ -245,36 +270,62 @@ export default class StFeaturesOne extends LitElement {
 
       .st-features-one__feature-desc {
         margin: 0.5rem 0 0 0;
-        font-size: 1rem;
-        line-height: 1.75;
+        font-size: 0.9375rem;
+        line-height: 1.75rem;
         opacity: 0.7;
       }
     `;
     document.head.appendChild(this.styleElement);
   }
 
+  private getDefaultConfig() {
+    return {
+      title: 'استمتعي ببشرة صحية وجميلة!',
+      subtitle: 'اكتشفي قوة العناية الطبيعية مع مجموعتنا المميزة',
+      bg_color: '#F2FAF3',
+      text_color: '#222',
+      title_color: '#222',
+      subtitle_color: '#047857',
+      icon_color: '#047857',
+      main_image: '/call-to-action/product.png',
+      float_image1: 'https://cdn.salla.sa/qQqDaW/corWzPQIML1pgyGvg3bfxUacKAHTV5ChGVuNBuuV.png',
+      float_image2: 'https://cdn.salla.sa/YgAgbp/caKu6acMSGlg6OeoWc5VepD7RUFuYDKgLRt26lG3.png',
+      reversed_image: false,
+      feature1_icon: 'sicon-leaf',
+      feature1_title: 'تركيبة طبيعية',
+      feature1_desc: 'مكونات طبيعية عالية الجودة مُختارة بعناية لتغذية بشرتك وحمايتها من العوامل الخارجية',
+      feature2_icon: 'sicon-chemistry',
+      feature2_title: 'تقنية متقدمة',
+      feature2_desc: 'تقنيات علمية حديثة تضمن امتصاص أفضل للمكونات الفعّالة وتعزز من نتائج العناية',
+      feature3_icon: 'sicon-medal',
+      feature3_title: 'نتائج مضمونة',
+      feature3_desc: 'نتائج واضحة ومضمونة خلال أسابيع من الاستخدام المنتظم، لبشرة أكثر نعومة وإشراقاً',
+      feature4_icon: 'sicon-heart',
+      feature4_title: 'مناسب لجميع الأنواع',
+      feature4_desc: 'تركيبة لطيفة وآمنة تناسب جميع أنواع البشرة بما في ذلك البشرة الحساسة والمختلطة',
+    };
+  }
+
   private getFeatures() {
-    if (!this.config) return [];
+    const config = { ...this.getDefaultConfig(), ...this.config };
 
     return [
-      { icon: this.config.feature1_icon, title: this.config.feature1_title, desc: this.config.feature1_desc },
-      { icon: this.config.feature2_icon, title: this.config.feature2_title, desc: this.config.feature2_desc },
-      { icon: this.config.feature3_icon, title: this.config.feature3_title, desc: this.config.feature3_desc },
-      { icon: this.config.feature4_icon, title: this.config.feature4_title, desc: this.config.feature4_desc },
+      { icon: config.feature1_icon, title: config.feature1_title, desc: config.feature1_desc },
+      { icon: config.feature2_icon, title: config.feature2_title, desc: config.feature2_desc },
+      { icon: config.feature3_icon, title: config.feature3_title, desc: config.feature3_desc },
+      { icon: config.feature4_icon, title: config.feature4_title, desc: config.feature4_desc },
     ].filter(f => f.title);
   }
 
   render() {
-    if (!this.config) {
-      return html`<div>Configuration is required</div>`;
-    }
+    const config = { ...this.getDefaultConfig(), ...this.config };
 
-    const bgColor = this.config.bg_color || '#ffffff';
-    const textColor = this.config.text_color || '#121212';
-    const titleColor = this.config.title_color || textColor;
-    const subtitleColor = this.config.subtitle_color || textColor;
-    const iconColor = this.config.icon_color || textColor;
-    const isReversed = this.config.reversed_image;
+    const bgColor = config.bg_color;
+    const textColor = config.text_color;
+    const titleColor = config.title_color;
+    const subtitleColor = config.subtitle_color;
+    const iconColor = config.icon_color;
+    const isReversed = config.reversed_image;
     const features = this.getFeatures();
 
     return html`
@@ -282,9 +333,9 @@ export default class StFeaturesOne extends LitElement {
         class="st-features-one s-block s-block--fullwidth"
         style="background-color: ${bgColor}; color: ${textColor};"
       >
-        ${this.config.float_image1 ? html`
+        ${config.float_image1 ? html`
           <img
-            src="${this.config.float_image1}"
+            src="${config.float_image1}"
             alt=""
             class="st-features-one__float-image ${isReversed ? 'st-features-one__float-image--left' : 'st-features-one__float-image--right'}"
             data-animate="fade-in"
@@ -295,9 +346,9 @@ export default class StFeaturesOne extends LitElement {
         <div class="container">
           <div class="st-features-one__grid">
             <div class="st-features-one__image-col ${isReversed ? 'st-features-one__image-col--reversed' : ''}">
-              ${this.config.main_image ? html`
+              ${config.main_image ? html`
                 <img
-                  src="${this.config.main_image}"
+                  src="${config.main_image}"
                   alt=""
                   class="st-features-one__main-image"
                   data-animate="scale-in"
@@ -305,9 +356,9 @@ export default class StFeaturesOne extends LitElement {
                 />
               ` : ''}
 
-              ${this.config.float_image2 ? html`
+              ${config.float_image2 ? html`
                 <img
-                  src="${this.config.float_image2}"
+                  src="${config.float_image2}"
                   alt=""
                   class="st-features-one__float-image-2"
                   style="bottom: -50px; right: 20px;"
@@ -319,18 +370,18 @@ export default class StFeaturesOne extends LitElement {
 
             <div class="st-features-one__content-col">
               <div class="st-features-one__header">
-                <h2 
-                  class="st-features-one__title" 
-                  style="color: ${titleColor};"
-                  data-animate="fade-up"
-                  data-delay="0"
-                >${this.config.title}</h2>
                 <p 
                   class="st-features-one__subtitle" 
                   style="color: ${subtitleColor};"
                   data-animate="fade-up"
+                  data-delay="0"
+                >${config.subtitle}</p>
+                <h2 
+                  class="st-features-one__title" 
+                  style="color: ${titleColor};"
+                  data-animate="fade-up"
                   data-delay="150"
-                >${this.config.subtitle}</p>
+                >${config.title}</h2>
               </div>
 
               <div class="st-features-one__features-grid">
