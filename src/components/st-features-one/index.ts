@@ -110,7 +110,7 @@ j
 
       @media (min-width: 1024px) {
         .st-features-one {
-          padding: 6rem 0 8rem;
+          padding: 6rem 0 6rem;
         }
       }
 
