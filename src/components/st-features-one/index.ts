@@ -140,6 +140,7 @@ j
 
       .st-features-one__float-image--left {
         left: -5rem;
+        top: -18px;
       }
 
       @media (min-width: 768px) {
@@ -150,7 +151,7 @@ j
 
       @media (min-width: 1024px) {
         .st-features-one__float-image--left {
-          left: -10rem;
+          left: 13rem;
         }
       }
 
@@ -167,7 +168,7 @@ j
 
       @media (min-width: 1024px) {
         .st-features-one__float-image--right {
-          right: -45px;
+          right: -65px;
         }
       }
 
@@ -442,7 +443,7 @@ j
                   width="200"
                   height="200"
                   class="st-features-one__float-image-2"
-                  style="right: ${this.config.from_right || 150}px; bottom: ${this.config.from_bottom || 20}px;"
+                  style="right: ${this.config.from_right || 220}px; bottom: ${this.config.from_bottom || 20}px;"
                   data-animate="fade-right"
                   data-delay="200"
                 />
