@@ -442,7 +442,7 @@
           "label": "عنوان فرعي",
           "placeholder": "أدخل العنوان الفرعي...",
           "icon": "sicon-format-text-alt",
-          "value": "اتبع الخطوات التالية للحصول على أفضل النتائج",
+          "value": "خطوات الاستخدام",
           "multilanguage": true,
           "required": false,
           "minLength": 0,
@@ -455,7 +455,7 @@
           "inputType": "color",
           "label": "لون العنوان الفرعي",
           "icon": "sicon-format-fill",
-          "value": "#666666",
+          "value": "#e58f9a",
           "required": false
         },
         {

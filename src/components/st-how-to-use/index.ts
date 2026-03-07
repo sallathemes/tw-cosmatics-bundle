@@ -147,16 +147,16 @@ export default class StHowToUse extends LitElement {
       }
 
       .st-how-to-use__step-title {
-        font-size: 1.25rem;
-        font-weight: 500;
+        font-size: 1rem;
+        font-weight: 600;
         line-height: 1;
-        margin: 0;
+        margin: 0 0 0.5625rem 0;
       }
 
       .st-how-to-use__step-desc {
         opacity: 0.6;
         margin: 0;
-        font-size: 0.95rem;
+        font-size: 0.8125rem;
         line-height: 1.6;
       }
 
@@ -164,7 +164,7 @@ export default class StHowToUse extends LitElement {
         list-style: none;
         padding: 0;
         margin: 0.5rem 0 0 0;
-        font-size: 0.875rem;
+        font-size: 0.8125rem;
         line-height: 1.75;
       }
 
@@ -172,6 +172,7 @@ export default class StHowToUse extends LitElement {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        margin-bottom: 0.5rem;
       }
 
       .st-how-to-use__step-list-item svg {
@@ -228,9 +229,7 @@ export default class StHowToUse extends LitElement {
       <div class="st-how-to-use__step" data-animate="fade-up" data-delay="${300 + (index * 100)}">
         <div class="st-how-to-use__step-header">
           <strong class="st-how-to-use__step-number" data-animate="scale-in" data-delay="${350 + (index * 100)}">${index + 1}</strong>
-          <svg class="st-how-to-use__step-line" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg" data-animate="fade-right" data-delay="${400 + (index * 100)}">
-            <line x1="0" y1="10" x2="200" y2="10" stroke="currentColor" stroke-width="2" stroke-dasharray="8 4"/>
-          </svg>
+          <img class="st-how-to-use__step-line" src="/step-line.png" alt="" data-animate="fade-right" data-delay="${400 + (index * 100)}">
         </div>
         <div class="st-how-to-use__step-content">
           <h3 class="st-how-to-use__step-title">${step.title}</h3>
@@ -266,8 +265,8 @@ export default class StHowToUse extends LitElement {
         style="background-color: ${bgColor}; color: ${textColor};"
       >
         <div class="st-how-to-use__header">
-          <h2 class="st-how-to-use__title" data-animate="fade-up" data-delay="0">${this.config.title}</h2>
-          <p class="st-how-to-use__subtitle" style="color: ${subtitleColor};" data-animate="fade-up" data-delay="150">${this.config.subtitle}</p>
+          <p class="st-how-to-use__subtitle aos-animate" style="color: ${subtitleColor};" data-animate="fade-up" data-delay="0">${this.config.subtitle}</p>
+          <h2 class="st-how-to-use__title" data-animate="fade-up" data-delay="150">${this.config.title}</h2>
         </div>
 
         <div class="container">
